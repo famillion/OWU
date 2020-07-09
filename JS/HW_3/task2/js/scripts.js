@@ -528,43 +528,219 @@
 
     ////============================================= 23 ======================================================================
 
-    // - Дано 2 масиви з рівною кількістю об'єктів.
-    // Масиви:
-    let usersWithId = [
-        {id: 1, name: 'vasya', age: 31, status: false},
-        {id: 2, name: 'petya', age: 30, status: true},
-        {id: 3, name: 'kolya', age: 29, status: true},
-        {id: 4, name: 'olya', age: 28, status: false}
-    ];
-
-    let citiesWithId = [
-        {user_id: 3, country: 'USA', city: 'Portland'},
-        {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
-        {user_id: 2, country: 'Poland', city: 'Krakow'},
-        {user_id: 4, country: 'USA', city: 'Miami'}
-    ];
-
-    // З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
-    // Записати цей об'єкт в новий масив
-    // Частковий приклад реультату:
-    // let usersWithCities = [{id: 1, name: 'vasya', age: 31, status: false, address: {user_id: 1, country: 'Ukraine', city: 'Ternopil'}}....]
+    // // - Дано 2 масиви з рівною кількістю об'єктів.
+    // // Масиви:
+    // let usersWithId = [
+    //     {id: 1, name: 'vasya', age: 31, status: false},
+    //     {id: 2, name: 'petya', age: 30, status: true},
+    //     {id: 3, name: 'kolya', age: 29, status: true},
+    //     {id: 4, name: 'olya', age: 28, status: false}
+    // ];
     //
-
-    let usersWithCities = [];
-
-    for (const user of usersWithId) {
-        for (const adr of citiesWithId) {
-            if(user.id === adr.user_id){
-                user.address = adr;
-                usersWithCities.push(user);
-            }
-        }
-    }
-
-    console.log(usersWithCities);
+    // let citiesWithId = [
+    //     {user_id: 3, country: 'USA', city: 'Portland'},
+    //     {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+    //     {user_id: 2, country: 'Poland', city: 'Krakow'},
+    //     {user_id: 4, country: 'USA', city: 'Miami'}
+    // ];
+    //
+    // // З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
+    // // Записати цей об'єкт в новий масив
+    // // Частковий приклад реультату:
+    // // let usersWithCities = [{id: 1, name: 'vasya', age: 31, status: false, address: {user_id: 1, country: 'Ukraine', city: 'Ternopil'}}....]
+    // //
+    //
+    // let usersWithCities = [];
+    //
+    // for (const user of usersWithId) {
+    //     for (const adr of citiesWithId) {
+    //         if(user.id === adr.user_id){
+    //             user.address = adr;
+    //             usersWithCities.push(user);
+    //         }
+    //     }
+    // }
+    //
+    // console.log(usersWithCities);
 
 
     ////============================================= 24 ======================================================================
+
+    // // - створити розмітці блок з id, class та текстом в середені. Зчитати окремо цей текст з селекторів по id , class та тегу
+    //
+    // let textID = document.getElementById('id').innerText;
+    // let textClass = document.getElementsByClassName('class')[0].innerText;
+    // let textTeg = document.getElementsByTagName('div')[0].innerText;
+    //
+    // let textsObj = {textID, textClass, textTeg};
+    //
+    // for (const text in textsObj) {
+    //     console.log(`********* Text ${text} **********`);
+    //     console.log(textsObj[text]);
+    // }
+
+    ////============================================= 25 ======================================================================
+
+// // - змінити цей текст використовуючи селектори id, class,  tag
+//
+    let divById = document.getElementById('id');
+    let divByClass = document.getElementsByClassName('class')[0];
+    let divByTag = document.getElementsByTagName('div')[0];
+//
+//     divById.innerHTML = 'змінений текст використовуючи селектор <b>id</b>';
+//     // divByClass.innerHTML = 'змінений текст використовуючи селектор <b>class/b>';
+//     // divByTag.innerHTML = 'змінений текст використовуючи селектори <b>tag/b>';
+
+    ////============================================= 26 ======================================================================
+
+// - змінити висоту та ширину блоку використовуючи селектори id, class,  tag
+
+    // divById.style.width = '600px';
+    // divById.style.height = '300px';
+
+    // divByClass.style.width = '400px';
+    // divByClass.style.height = '200px';
+    //
+    divByTag.style.width = '300px';
+    divByTag.style.height = '150px';
+
+    ////============================================= 27 ======================================================================
+
+    let line = document.createElement('hr');
+    document.body.appendChild(line);
+// - за допомоги document.createElement та appendChild створити таблицю на 1 рядок з трьома ячейками всередені
+
+    let divTable1 = document.createElement('div');
+    divTable1.style.margin = '20px';
+    let table = document.createElement('table');
+    let titleTable = document.createElement('caption');
+    let tr = document.createElement('tr');
+    let td = document.createElement('td');
+
+    table.cellPadding = '10';
+    table.cellSpacing = '2';
+
+    titleTable.innerHTML = '<b>1 Row Table</b>';
+
+    table.appendChild(titleTable);
+
+    table.appendChild(tr);
+
+    td.width = '50px';
+    td.height = '15px';
+
+    for (let i = 0; i < 3; i++) {
+        let tdCl = td.cloneNode();
+        tdCl.style.backgroundColor = 'aqua';
+        tdCl.style.textAlign = 'center';
+        tdCl.innerText = `col ${i + 1}`;
+        tr.appendChild(tdCl);
+    }
+
+    divTable1.appendChild(table);
+    document.body.appendChild(divTable1);
+
+    document.body.appendChild(line.cloneNode());
+
+    ////============================================= 28 ======================================================================
+
+// - за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені
+
+    let divTable2 = document.createElement('div');
+    divTable2.style.margin = '20px';
+
+    let table2 = table.cloneNode();
+    let titleTable2 = titleTable.cloneNode();
+
+    titleTable2.innerHTML = '<b>10 Row Table</b>'
+
+    table2.appendChild(titleTable2);
+
+    for (let i = 0; i < 10; i++) {
+        let row = tr.cloneNode();
+        for (let j = 0; j < 3; j++) {
+            let tdCl = td.cloneNode();
+            tdCl.style.backgroundColor = 'aqua';
+            tdCl.style.textAlign = 'center';
+            tdCl.innerText = `row ${i + 1} col ${j + 1}`;
+            row.appendChild(tdCl);
+        }
+        table2.appendChild(row);
+    }
+
+    divTable2.appendChild(table2);
+    document.body.appendChild(divTable2);
+
+    document.body.appendChild(line.cloneNode());
+
+    ////============================================= 29 ======================================================================
+
+// - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на 10 рядків з 5 ячейками всередені
+
+    let divTable3 = document.createElement('div');
+    divTable3.style.margin = '20px';
+
+    let table3 = table.cloneNode();
+    let titleTable3 = titleTable.cloneNode();
+
+    titleTable3.innerHTML = '<b>10 Row 5 column Table</b>'
+
+    table3.appendChild(titleTable3);
+
+    for (let i = 0; i < 10; i++) {
+        let row = tr.cloneNode();
+        for (let j = 0; j < 5; j++) {
+            let tdCl = td.cloneNode();
+            tdCl.style.backgroundColor = 'aqua';
+            tdCl.style.textAlign = 'center';
+            tdCl.innerText = `row ${i + 1} col ${j + 1}`;
+            row.appendChild(tdCl);
+        }
+        table3.appendChild(row);
+    }
+
+    divTable3.appendChild(table3);
+    document.body.appendChild(divTable3);
+
+    document.body.appendChild(line.cloneNode());
+
+    ////============================================= 29 ======================================================================
+
+// - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені.
+// n та m отримати з prompt
+
+    let n = +prompt('Enter row count');
+    let m = +prompt('Enter column count');
+
+    let divTable4 = document.createElement('div');
+    divTable4.style.margin = '20px';
+
+    let table4 = table.cloneNode();
+    let titleTable4 = titleTable.cloneNode();
+
+    titleTable4.innerHTML = `<b>${n} Row ${m} column Table</b>`;
+
+    table4.appendChild(titleTable4);
+
+
+
+    for (let i = 0; i < n; i++) {
+        let row = tr.cloneNode();
+        for (let j = 0; j < m; j++) {
+            let tdCl = td.cloneNode();
+            tdCl.style.backgroundColor = 'aqua';
+            tdCl.style.textAlign = 'center';
+            tdCl.innerText = `row ${i + 1} col ${j + 1}`;
+            row.appendChild(tdCl);
+        }
+        table4.appendChild(row);
+    }
+
+    divTable4.appendChild(table4);
+    document.body.appendChild(divTable4);
+
+    document.body.appendChild(line.cloneNode());
+
 
 
 }
