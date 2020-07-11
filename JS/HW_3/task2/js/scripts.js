@@ -1,6 +1,11 @@
 ////=================================== HOME WORK 3 TASK-2 ===============================================================
 
 {
+    let sitec = document.getElementById('sitec');
+    sitec.style.display = 'none';
+
+    let fightClub = document.getElementById('fight-club');
+    fightClub.style.display = 'none';
 
 ////============================================= 1 =====================================================================
 
@@ -581,166 +586,293 @@
 
     ////============================================= 25 ======================================================================
 
-// // - змінити цей текст використовуючи селектори id, class,  tag
+// // // - змінити цей текст використовуючи селектори id, class,  tag
+// //
+//     let divById = document.getElementById('id');
+//     let divByClass = document.getElementsByClassName('class')[0];
+//     let divByTag = document.getElementsByTagName('div')[0];
+// //
+// //     divById.innerHTML = 'змінений текст використовуючи селектор <b>id</b>';
+// //     // divByClass.innerHTML = 'змінений текст використовуючи селектор <b>class/b>';
+// //     // divByTag.innerHTML = 'змінений текст використовуючи селектори <b>tag/b>';
 //
-    let divById = document.getElementById('id');
-    let divByClass = document.getElementsByClassName('class')[0];
-    let divByTag = document.getElementsByTagName('div')[0];
+//     ////============================================= 26 ======================================================================
 //
-//     divById.innerHTML = 'змінений текст використовуючи селектор <b>id</b>';
-//     // divByClass.innerHTML = 'змінений текст використовуючи селектор <b>class/b>';
-//     // divByTag.innerHTML = 'змінений текст використовуючи селектори <b>tag/b>';
+// // - змінити висоту та ширину блоку використовуючи селектори id, class,  tag
+//
+//     // divById.style.width = '600px';
+//     // divById.style.height = '300px';
+//
+//     // divByClass.style.width = '400px';
+//     // divByClass.style.height = '200px';
+//     //
+//     divByTag.style.width = '300px';
+//     divByTag.style.height = '150px';
+//
+//     ////============================================= 27 ======================================================================
+//
+//     let line = document.createElement('hr');
+//     document.body.appendChild(line);
+// // - за допомоги document.createElement та appendChild створити таблицю на 1 рядок з трьома ячейками всередені
+//
+//     let divTable1 = document.createElement('div');
+//     divTable1.style.margin = '20px';
+//     let table = document.createElement('table');
+//     let titleTable = document.createElement('caption');
+//     let tr = document.createElement('tr');
+//     let td = document.createElement('td');
+//
+//     table.cellPadding = '10';
+//     table.cellSpacing = '2';
+//
+//     titleTable.innerHTML = '<b>1 Row Table</b>';
+//
+//     table.appendChild(titleTable);
+//
+//     table.appendChild(tr);
+//
+//     td.width = '50px';
+//     td.height = '15px';
+//
+//     for (let i = 0; i < 3; i++) {
+//         let tdCl = td.cloneNode();
+//         tdCl.style.backgroundColor = 'aqua';
+//         tdCl.style.textAlign = 'center';
+//         tdCl.innerText = `col ${i + 1}`;
+//         tr.appendChild(tdCl);
+//     }
+//
+//     divTable1.appendChild(table);
+//     document.body.appendChild(divTable1);
+//
+//     document.body.appendChild(line.cloneNode());
+//
+//     ////============================================= 28 ======================================================================
+//
+// // - за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені
+//
+//     let divTable2 = document.createElement('div');
+//     divTable2.style.margin = '20px';
+//
+//     let table2 = table.cloneNode();
+//     let titleTable2 = titleTable.cloneNode();
+//
+//     titleTable2.innerHTML = '<b>10 Row Table</b>'
+//
+//     table2.appendChild(titleTable2);
+//
+//     for (let i = 0; i < 10; i++) {
+//         let row = tr.cloneNode();
+//         for (let j = 0; j < 3; j++) {
+//             let tdCl = td.cloneNode();
+//             tdCl.style.backgroundColor = 'aqua';
+//             tdCl.style.textAlign = 'center';
+//             tdCl.innerText = `row ${i + 1} col ${j + 1}`;
+//             row.appendChild(tdCl);
+//         }
+//         table2.appendChild(row);
+//     }
+//
+//     divTable2.appendChild(table2);
+//     document.body.appendChild(divTable2);
+//
+//     document.body.appendChild(line.cloneNode());
+//
+//     ////============================================= 29 ======================================================================
+//
+// // - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на 10 рядків з 5 ячейками всередені
+//
+//     let divTable3 = document.createElement('div');
+//     divTable3.style.margin = '20px';
+//
+//     let table3 = table.cloneNode();
+//     let titleTable3 = titleTable.cloneNode();
+//
+//     titleTable3.innerHTML = '<b>10 Row 5 column Table</b>'
+//
+//     table3.appendChild(titleTable3);
+//
+//     for (let i = 0; i < 10; i++) {
+//         let row = tr.cloneNode();
+//         for (let j = 0; j < 5; j++) {
+//             let tdCl = td.cloneNode();
+//             tdCl.style.backgroundColor = 'aqua';
+//             tdCl.style.textAlign = 'center';
+//             tdCl.innerText = `row ${i + 1} col ${j + 1}`;
+//             row.appendChild(tdCl);
+//         }
+//         table3.appendChild(row);
+//     }
+//
+//     divTable3.appendChild(table3);
+//     document.body.appendChild(divTable3);
+//
+//     document.body.appendChild(line.cloneNode());
+//
+//     ////============================================= 30 ======================================================================
+//
+// // - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені.
+// // n та m отримати з prompt
+//
+//     let n = +prompt('Enter row count');
+//     let m = +prompt('Enter column count');
+//
+//     let divTable4 = document.createElement('div');
+//     divTable4.style.margin = '20px';
+//
+//     let table4 = table.cloneNode();
+//     let titleTable4 = titleTable.cloneNode();
+//
+//     titleTable4.innerHTML = `<b>${n} Row ${m} column Table</b>`;
+//
+//     table4.appendChild(titleTable4);
+//
+//
+//
+//     for (let i = 0; i < n; i++) {
+//         let row = tr.cloneNode();
+//         for (let j = 0; j < m; j++) {
+//             let tdCl = td.cloneNode();
+//             tdCl.style.backgroundColor = 'aqua';
+//             tdCl.style.textAlign = 'center';
+//             tdCl.innerText = `row ${i + 1} col ${j + 1}`;
+//             row.appendChild(tdCl);
+//         }
+//         table4.appendChild(row);
+//     }
+//
+//     divTable4.appendChild(table4);
+//     document.body.appendChild(divTable4);
+//
+//     document.body.appendChild(line.cloneNode());
+//
 
-    ////============================================= 26 ======================================================================
+   // //============================================= 31 ======================================================================
 
-// - змінити висоту та ширину блоку використовуючи селектори id, class,  tag
+// // --Завантажити з мережі будь-який шаблон сайту. Підключити до нього свій скріпт-файл.
+// // У файлі прописати наступні доступи та дії
+//     sitec.style.display = '';
+// // - знайти всі елементі, які мають class
+//
+//     let allSitecClasses = sitec.querySelectorAll('[class]');
+//     console.log(allSitecClasses);
+//
+// // - знайти всі параграфи ,та змінити текст на hello oktenweb!
+//
+//     let allSitecP = sitec.querySelectorAll('p');
+//     console.log(allSitecP);
+//
+//     for (const peha of allSitecP) {
+//         peha.innerText = 'hello oktenweb!';
+//     }
+//
+// // - знайти всі div та змінити ім колір на червоний
+//
+//     let allSitecDiv = sitec.getElementsByTagName('div');
+//
+//     for (const div of allSitecDiv) {
+//         div.style.backgroundColor = 'red';
+//     }
 
-    // divById.style.width = '600px';
-    // divById.style.height = '300px';
+    // //============================================= 32 ======================================================================
+//
+// // ============
+// // ====class===
+// //     ============
+// //
+// //   - є сторінка rules.html.
+//
+//     fightClub.style.display = '';
+//
+// //   Контентом сторінки є заголовки та параграфи. Заголовки (h2) характеризують
+// //   тему контенту яка вказана в параграфі.
+// //   створити скрипт, котрий зчитує всі заголовки, та робить в блоці з id=content з них список(ul>li),
+// //   який буде змістом того, що знаходиться на сторінці.
+// //   Скріпт повинен працювати навіть якщо кількість блоків з заголовком та параграфом зміниться.
+//
+//     let contentId = document.getElementById('content');
+//
+//     let contentIdList = document.createElement('ul');
+//     contentIdList.style.margin = '40px';
+//     contentIdList.style.listStyleType = 'disc';
+//     contentId.appendChild(contentIdList);
+//
+//     let rulesHeaders = fightClub.getElementsByTagName('h2');
+//
+//     for (const title of rulesHeaders) {
+//         let li = document.createElement('li');
+//         li.style.margin = '10px';
+//         li.innerText = title.innerText;
+//
+//         contentIdList.appendChild(li);
+//     }
 
-    // divByClass.style.width = '400px';
-    // divByClass.style.height = '200px';
-    //
-    divByTag.style.width = '300px';
-    divByTag.style.height = '150px';
+    // //============================================= 33 ======================================================================
 
-    ////============================================= 27 ======================================================================
-
-    let line = document.createElement('hr');
-    document.body.appendChild(line);
-// - за допомоги document.createElement та appendChild створити таблицю на 1 рядок з трьома ячейками всередені
-
-    let divTable1 = document.createElement('div');
-    divTable1.style.margin = '20px';
-    let table = document.createElement('table');
-    let titleTable = document.createElement('caption');
-    let tr = document.createElement('tr');
-    let td = document.createElement('td');
-
-    table.cellPadding = '10';
-    table.cellSpacing = '2';
-
-    titleTable.innerHTML = '<b>1 Row Table</b>';
-
-    table.appendChild(titleTable);
-
-    table.appendChild(tr);
-
-    td.width = '50px';
-    td.height = '15px';
-
-    for (let i = 0; i < 3; i++) {
-        let tdCl = td.cloneNode();
-        tdCl.style.backgroundColor = 'aqua';
-        tdCl.style.textAlign = 'center';
-        tdCl.innerText = `col ${i + 1}`;
-        tr.appendChild(tdCl);
-    }
-
-    divTable1.appendChild(table);
-    document.body.appendChild(divTable1);
-
-    document.body.appendChild(line.cloneNode());
-
-    ////============================================= 28 ======================================================================
-
-// - за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені
-
-    let divTable2 = document.createElement('div');
-    divTable2.style.margin = '20px';
-
-    let table2 = table.cloneNode();
-    let titleTable2 = titleTable.cloneNode();
-
-    titleTable2.innerHTML = '<b>10 Row Table</b>'
-
-    table2.appendChild(titleTable2);
-
-    for (let i = 0; i < 10; i++) {
-        let row = tr.cloneNode();
-        for (let j = 0; j < 3; j++) {
-            let tdCl = td.cloneNode();
-            tdCl.style.backgroundColor = 'aqua';
-            tdCl.style.textAlign = 'center';
-            tdCl.innerText = `row ${i + 1} col ${j + 1}`;
-            row.appendChild(tdCl);
-        }
-        table2.appendChild(row);
-    }
-
-    divTable2.appendChild(table2);
-    document.body.appendChild(divTable2);
-
-    document.body.appendChild(line.cloneNode());
-
-    ////============================================= 29 ======================================================================
-
-// - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на 10 рядків з 5 ячейками всередені
-
-    let divTable3 = document.createElement('div');
-    divTable3.style.margin = '20px';
-
-    let table3 = table.cloneNode();
-    let titleTable3 = titleTable.cloneNode();
-
-    titleTable3.innerHTML = '<b>10 Row 5 column Table</b>'
-
-    table3.appendChild(titleTable3);
-
-    for (let i = 0; i < 10; i++) {
-        let row = tr.cloneNode();
-        for (let j = 0; j < 5; j++) {
-            let tdCl = td.cloneNode();
-            tdCl.style.backgroundColor = 'aqua';
-            tdCl.style.textAlign = 'center';
-            tdCl.innerText = `row ${i + 1} col ${j + 1}`;
-            row.appendChild(tdCl);
-        }
-        table3.appendChild(row);
-    }
-
-    divTable3.appendChild(table3);
-    document.body.appendChild(divTable3);
-
-    document.body.appendChild(line.cloneNode());
-
-    ////============================================= 29 ======================================================================
-
-// - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені.
-// n та m отримати з prompt
-
-    let n = +prompt('Enter row count');
-    let m = +prompt('Enter column count');
-
-    let divTable4 = document.createElement('div');
-    divTable4.style.margin = '20px';
-
-    let table4 = table.cloneNode();
-    let titleTable4 = titleTable.cloneNode();
-
-    titleTable4.innerHTML = `<b>${n} Row ${m} column Table</b>`;
-
-    table4.appendChild(titleTable4);
+//     // -Є масив котрий характеризує правила. Створити скрипт який ітерує цей масив, та робить з кожне правило в окремому
+//     // блоці.
+//     // При цому в блоці, номер правила записати в свій блок, текст правила записати в свій окремий блок.
+//     // Результатом відпрацювання скріпта повинна бути структура яка міститься в блоці wrap файла rule.html
+//
+//     let rules = [
+//         {
+//             title: 'Первое правило Бойцовского клуба.',
+//             body: 'Никому не рассказывать о Бойцовском клубе.'
+//         },
+//         {
+//             title: 'Второе правило Бойцовского клуба.',
+//             body: 'Никогда никому не рассказывать о Бойцовском клубе.'
+//         },
+//         {
+//             title: 'Третье правило Бойцовского клуба.',
+//             body: 'В схватке участвуют только двое.'
+//         },
+//         {
+//             title: 'Четвертое правило Бойцовского клуба.',
+//             body: 'Не более одного поединка за один раз.'
+//         },
+//         {
+//             title: 'Пятое правило Бойцовского клуба.',
+//             body: 'Бойцы сражаются без обуви и голые по пояс.'
+//         },
+//         {
+//             title: 'Шестое правило Бойцовского клуба.',
+//             body: 'Поединок продолжается столько, сколько потребуется.'
+//         },
+//         {
+//             title: 'Седьмое правило Бойцовского клуба.',
+//             body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
+//         },
+//         {
+//             title: 'Восьмое и последнее правило Бойцовского клуба.',
+//             body: 'Новичок обязан принять бой.'
+//         },
+//     ];
+//
+//     let wrap = document.createElement('div');
+//     wrap.classList.add('wrap');
+//     wrap.style.padding = '20px';
+//
+//     for (const rule of rules) {
+//         let ruleDiv = document.createElement('div');
+//         let titleDiv = document.createElement('div');
+//         let bodyDiv = document.createElement('div');
+//
+//         ruleDiv.style.padding = '5px';
+//
+//         titleDiv.innerText = rule.title;
+//         ruleDiv.appendChild(titleDiv);
+//
+//         bodyDiv.innerText = rule.body;
+//         ruleDiv.appendChild(bodyDiv);
+//
+//         wrap.appendChild(ruleDiv);
+//     }
+//
+//     document.body.appendChild(wrap);
 
 
 
-    for (let i = 0; i < n; i++) {
-        let row = tr.cloneNode();
-        for (let j = 0; j < m; j++) {
-            let tdCl = td.cloneNode();
-            tdCl.style.backgroundColor = 'aqua';
-            tdCl.style.textAlign = 'center';
-            tdCl.innerText = `row ${i + 1} col ${j + 1}`;
-            row.appendChild(tdCl);
-        }
-        table4.appendChild(row);
-    }
-
-    divTable4.appendChild(table4);
-    document.body.appendChild(divTable4);
-
-    document.body.appendChild(line.cloneNode());
 
 
-
-}
+ }
