@@ -1,4 +1,4 @@
-.test-and-button, .hidden-button, .input-age, .menu-hidden{
+.test-and-button, .hidden-button, .input-age, .menu-hidden, .comments, .forms, .table{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -6,6 +6,7 @@
     min-height: 50px;
     background-color: cadetblue;
     margin: 10px auto;
+    padding: 10px;
 }
 
 .test-and-button #test{
@@ -22,5 +23,32 @@
 
 .hidden{
     display: none;
+}
+
+.comments{
+    flex-direction: column;
+    min-height: 0;
+}
+
+.comments-items{
+    margin: 5px;
+    padding: 5px;
+    background-color: aqua;
+}
+
+.forms{
+    flex-direction: column;
+}
+
+.forms form{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.forms .forms-parse-btn{
+    margin-top: 10px;
 }
 
