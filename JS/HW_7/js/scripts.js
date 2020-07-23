@@ -121,12 +121,17 @@ class Users {
 let parseFormBTN = document.querySelector('.forms-parse-btn');
 
 parseFormBTN.addEventListener('click', () => {
-    let name = document.forms.form1.name.value;
-    let surname = document.forms.form1.surname.value;
-    let email = document.forms.form2.email.value;
-    let pass = document.forms.form2.pass.value;
+    let name = document.forms.form1.name;
+    let surname = document.forms.form1.surname;
+    let email = document.forms.form2.email;
+    let pass = document.forms.form2.pass;
 
-    console.log(new Users(name,surname,email,pass));
+    console.log(new Users(name.value, surname.value, email.value, pass.value));
+
+    name.value = '';
+    surname.value = '';
+    email.value = '';
+    pass.value = '';
 });
 
 ////=========================== 7 ======================================================================================
@@ -135,7 +140,7 @@ parseFormBTN.addEventListener('click', () => {
 //     Другий параметр визначає кліькіть ячеєк в кожній строці.
 //     Третій параметр визначає елемент в який потрібно таблицю додати.
 
-function createTable(rows,columns,tag) {
+function createTable(rows, columns, tag) {
 
     let someTag = document.createElement(tag);
     someTag.classList.add('table');
@@ -161,6 +166,120 @@ function createTable(rows,columns,tag) {
     return someTag;
 }
 
-document.body.appendChild(createTable(5, 5, 'div'));
+// document.body.appendChild(createTable(5, 5, 'div'));
 
 ////=========================== 8 ======================================================================================
+// - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+//     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+
+let inputBlock = document.querySelector('.input-table');
+
+let rows = document.forms.tableForm.rows;
+let colsT = document.forms.tableForm.cols;
+let tagTo = document.forms.tableForm.tag;
+
+let createTabBTN = document.querySelector('.input-table .create-table');
+
+createTabBTN.addEventListener('click', () => {
+    inputBlock.appendChild(createTable(rows.value, colsT.value, tagTo.value));
+    rows.value = '';
+    colsT.value = '';
+    tagTo.value = '';
+});
+
+////=========================== 9 ======================================================================================
+// (Додатковачастина для завдання)
+// - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+
+let carouselItemsList = document.querySelectorAll('.carousel-item img');
+let carouslEl = document.querySelector('.carousel-items');
+
+/////------------ ver 1 --------------------------
+// let min = -100 * (carouselItemsList.length - 3);
+// let max = 0;
+// let pos = max;
+//
+// document.addEventListener('mousedown', ev => {
+//     if (ev.target === document.querySelector('.left') && ev.buttons === 1) {
+//         if (pos >= min && pos <= max) {
+//             if (pos !== min) {
+//                 pos -= 100;
+//                 carouslEl.style.transform = `translateX(${pos}px)`;
+//             }
+//         }
+//     }
+//     if (ev.target === document.querySelector('.right') && ev.buttons === 1) {
+//         if (pos >= min && pos <= max) {
+//             if (pos !== max) {
+//                 pos += 100;
+//                 carouslEl.style.transform = `translateX(${pos}px)`;
+//             }
+//         }
+//     }
+// });
+
+/////--------------var 2-----------------------
+let imgsSRC = [];
+
+let step = 0;
+
+for (let i = 0; i < carouselItemsList.length; i++) {
+    imgsSRC.push(carouselItemsList[i].src);
+}
+
+
+document.addEventListener('mousedown', ev => {
+    if (ev.target === document.querySelector('.left') && ev.buttons === 1) {
+        step++;
+        if (step < carouselItemsList.length - 2) {
+            carouselItemsList[0].src = imgsSRC[step];
+            carouselItemsList[1].src = imgsSRC[step + 1];
+            carouselItemsList[2].src = imgsSRC[step + 2];
+        } else if (step === carouselItemsList.length - 2) {
+            carouselItemsList[0].src = imgsSRC[carouselItemsList.length - 2];
+            carouselItemsList[1].src = imgsSRC[carouselItemsList.length - 1];
+            carouselItemsList[2].src = imgsSRC[0];
+        } else if (step === carouselItemsList.length - 1) {
+            carouselItemsList[0].src = imgsSRC[carouselItemsList.length - 1];
+            carouselItemsList[1].src = imgsSRC[0];
+            carouselItemsList[2].src = imgsSRC[1];
+        } else if (step === carouselItemsList.length) {
+            step = 0;
+            carouselItemsList[0].src = imgsSRC[step];
+            carouselItemsList[1].src = imgsSRC[step + 1];
+            carouselItemsList[2].src = imgsSRC[step + 2];
+        }
+    }
+    if (ev.target === document.querySelector('.right') && ev.buttons === 1) {
+        step--;
+        if (step >= 0 && step < carouselItemsList.length - 2) {
+            carouselItemsList[0].src = imgsSRC[step];
+            carouselItemsList[1].src = imgsSRC[step + 1];
+            carouselItemsList[2].src = imgsSRC[step + 2];
+        } else if (step < 0) {
+            step = carouselItemsList.length - 1;
+            carouselItemsList[0].src = imgsSRC[step];
+            carouselItemsList[1].src = imgsSRC[0];
+            carouselItemsList[2].src = imgsSRC[1];
+        }else if (step === carouselItemsList.length - 2) {
+            carouselItemsList[0].src = imgsSRC[step];
+            carouselItemsList[1].src = imgsSRC[carouselItemsList.length - 1];
+            carouselItemsList[2].src = imgsSRC[0];
+        }
+    }
+});
+
+////=========================== 10 ======================================================================================
+// - Сворити масив не цензцрних слів.
+//     Сворити інпут текстового типу.
+//     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
+// кинути алерт з попередженням.
+//     Перевірку робити при натисканні на кнопку
+
+
+
+// - Сворити масив не цензцрних слів.
+//     Сворити інпут текстового типу.
+//     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
+//     Кинути алерт з попередженням у випадку якщо містить.
+//     Перевірку робити при натисканні на кнопку
