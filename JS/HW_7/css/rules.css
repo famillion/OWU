@@ -1,0 +1,4 @@
+.selected{
+    background-color: coral;
+    transition: all .4s;
+}
