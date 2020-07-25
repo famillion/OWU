@@ -261,7 +261,7 @@ document.addEventListener('mousedown', ev => {
             carouselItemsList[0].src = imgsSRC[step];
             carouselItemsList[1].src = imgsSRC[0];
             carouselItemsList[2].src = imgsSRC[1];
-        }else if (step === carouselItemsList.length - 2) {
+        } else if (step === carouselItemsList.length - 2) {
             carouselItemsList[0].src = imgsSRC[step];
             carouselItemsList[1].src = imgsSRC[carouselItemsList.length - 1];
             carouselItemsList[2].src = imgsSRC[0];
@@ -285,7 +285,7 @@ for (let i = 0; i < 50; i++) {
 let matukWordCheckBTN = document.querySelector('.matuki-word .matuk-word-btn');
 
 matukWordCheckBTN.addEventListener('click', () => {
-    if(matukiArr.includes(document.forms.matukWord.word.value)){
+    if (matukiArr.includes(document.forms.matukWord.word.value)) {
         alert('Ану без матюків тут мені!!!');
     }
     document.forms.matukWord.word.value = '';
@@ -307,7 +307,7 @@ matukiTextCheckBTN.addEventListener('click', () => {
         .split(' ');
 
     for (const word of textToArr) {
-        if(matukiArr.includes(word)){
+        if (matukiArr.includes(word)) {
             alert('Ану без матюків тут мені!!!');
             return;
         }
@@ -328,35 +328,93 @@ setTimeout(() => {
     for (const rule of rulesArr) {
         const {title, classId} = rule;
         const li = document.createElement('li');
+        li.style.marginBottom = '10px';
         const a = document.createElement('a');
-        a.href = 'rules.html';
+
+        a.href = 'rules.html'
         a.innerText = title;
         a.classList.add(classId);
+
+        a.onclick = () => {
+            localStorage.setItem('class', a.classList[0]);
+        };
+
         li.appendChild(a);
         listRules.appendChild(li);
     }
-}, 100);
+}, 500);
 
 
 // ////=========================== 13 ======================================================================================
 // -- взять массив пользователей
 
 let usersWithAddress = [
-    {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-    {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
-    {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
-    {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
-    {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
-    {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
-    {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
-    {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
-    {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
-    {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-    {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+    {id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+    {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+    {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+    {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+    {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+    {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+    {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+    {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+    {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+    {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+    {id: 11, name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
 ];
 
-// Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
+// Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать
+// как вместе так и по отдельности.
+
+let statusCheck = document.forms.users.status;
+let ageOld29 = document.forms.users.age29;
+let kyivCity = document.forms.users.kyiv;
+
+let filterBTN = document.querySelector('.users-address-btn');
+
+let userDiv = document.createElement('div');
+
+document.querySelector('.user-address-area').appendChild(userDiv);
+
 // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
 // 2й - оставляет старше 29 лет включительно
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
+
+filterBTN.addEventListener('click', () => {
+    let usersMap = usersWithAddress.map(user => user);
+
+    if(statusCheck.checked){
+        usersMap = usersMap.filter(({status}) => !status);
+    }
+
+    if(ageOld29.checked){
+        usersMap = usersMap.filter(({age}) => age >= 29);
+    }
+
+    if(kyivCity.checked){
+        usersMap = usersMap.filter(({address:{city}}) => city === 'Kyiv');
+    }
+
+    // for (const user of usersMap) {
+    //     console.log(JSON.stringify(user));
+    // }
+
+    userDiv.innerText = JSON.stringify(usersMap);
+});
+
+// ////=========================== 14 ======================================================================================
+// *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
+// при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
+// НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
+//     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
+//
+//
+
+// ////=========================== 15 ======================================================================================
+// *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+
+addEventListener('click', ev => {
+    console.log(document.getSelection().getRangeAt(0).toString());
+});
+
+
