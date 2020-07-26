@@ -1,0 +1,21 @@
+.form-with-inputs{
+    display: flex;
+    background-color: aqua;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.form-with-inputs form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-with-inputs form label{
+    margin: 10px;
+}
+
+.form-with-inputs .form-with-inputs-btn{
+    align-self: center;
+    margin: 30px;
+}
