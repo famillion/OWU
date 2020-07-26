@@ -1,0 +1,1 @@
+let len = localStorage.length

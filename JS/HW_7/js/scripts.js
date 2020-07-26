@@ -319,7 +319,9 @@ matukiTextCheckBTN.addEventListener('click', () => {
 // по всем заголовкам которые есть в тексте.
 //     При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
 
-window.open('rules.html', '_blank');      //!!!РАЗРЕШИТЬ ВСПЛЫВАЮЩИЕ ОКНА!!!!
+// window.open('rules.html', '_blank');      //!!!РАЗРЕШИТЬ ВСПЛЫВАЮЩИЕ ОКНА!!!!
+
+let scr = document.querySelectorAll('script');
 
 setTimeout(() => {
     let rulesArr = JSON.parse(localStorage.getItem('ruleArr'));
@@ -383,16 +385,16 @@ document.querySelector('.user-address-area').appendChild(userDiv);
 filterBTN.addEventListener('click', () => {
     let usersMap = usersWithAddress.map(user => user);
 
-    if(statusCheck.checked){
+    if (statusCheck.checked) {
         usersMap = usersMap.filter(({status}) => !status);
     }
 
-    if(ageOld29.checked){
+    if (ageOld29.checked) {
         usersMap = usersMap.filter(({age}) => age >= 29);
     }
 
-    if(kyivCity.checked){
-        usersMap = usersMap.filter(({address:{city}}) => city === 'Kyiv');
+    if (kyivCity.checked) {
+        usersMap = usersMap.filter(({address: {city}}) => city === 'Kyiv');
     }
 
     // for (const user of usersMap) {
@@ -407,14 +409,34 @@ filterBTN.addEventListener('click', () => {
 // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
 //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
-//
-//
+
+
 
 // ////=========================== 15 ======================================================================================
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
 
-addEventListener('click', ev => {
-    console.log(document.getSelection().getRangeAt(0).toString());
+// addEventListener('click', ev => {
+//     let selected = document.getSelection();
+//     let txt = selected.toString();
+//     let repTxt = `<b><i>${txt}</i></b>`;
+//     let str = ev.target;
+//     console.log(str.innerText);
+//
+//     document.onselectionchange = () => {
+//         if (ev.target !== document.body && txt !== '') {
+//             // let s = str.innerText;
+//             let newStr = str.innerText.replace(txt, repTxt);
+//             console.log(newStr);
+//             ev.target.innerHTML = newStr;
+//         }
+//     };
+//     // console.log(repTxt);
+//     // let newStr = fullStr.replace(txt, repTxt);
+//     //
+//     // console.log(newStr);
+//     //
+//     //
+
 });
 
 

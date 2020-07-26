@@ -10,11 +10,13 @@ localStorage.setItem('ruleArr', JSON.stringify(ruleArr));
 
 let className = localStorage.getItem('class');
 
-for (const rule of rulesAll) {
-    console.log(className);
-    rule.classList.contains(className)
-        ? rule.classList.add('selected')
-        : rule.classList.remove('selected');
+function select() {
+    for (const rule of rulesAll) {
+        console.log(className);
+        rule.classList.contains(className)
+            ? rule.classList.add('selected')
+            : rule.classList.remove('selected');
+    }
 }
 
-window.close();
+select();
