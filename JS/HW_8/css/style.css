@@ -1,6 +1,7 @@
 .form-with-inputs{
     display: flex;
     background-color: aqua;
+    margin: 20px;
     padding: 10px;
     flex-direction: column;
 }
@@ -18,4 +19,24 @@
 .form-with-inputs .form-with-inputs-btn{
     align-self: center;
     margin: 30px;
+}
+
+.text-step{
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: cadetblue;
+}
+
+.text-step .save-text-step-area{
+    margin: 15px auto 5px;
+}
+
+.text-step .text-step-arrows{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }

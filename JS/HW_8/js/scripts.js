@@ -56,13 +56,8 @@ userFormBtm.addEventListener('click', () => {
 
 function form1Set(form, obj) {
 
-    console.log(form['check'].checked);
-    console.log(obj['check']);
-
-
     for (let i = 0; i < form.length; i++) {
         const {name} = form[i];
-        console.log(name);
         (name === 'check' && obj[name]) ? form[name].checked = true : form[name].checked = false;
         if (name === 'ratio' && obj[name] === form[name].value) {
             form[name].checked = true;
@@ -83,3 +78,79 @@ function showAlert() {
 }
 
 ////============================== 3 ===================================================================================
+// -Дан текстареа. В него можно ввести данные, нажать кнопку "сохранить" и они "фикисруются" (в хранилище),
+// затем поредактировать их, затем еще поредактировать и возможно еще.....
+// Требование : хранить историю своих изменений (даже после перезагрузки страницы).
+// Сверху над текстареа должны появится стрелочки, с помощью которых можно перемещаться по истории
+// (не забудьте!чекпоинт истории - нажатеи кнопки сохранить).
+
+let arrowsDiv = document.querySelector('.text-step-arrows');
+
+let textStepsArea = document.querySelector('#text-step-area');
+
+let textStepsAreaBTN = document.querySelector('.save-text-step-area');
+
+let count = 0;
+
+let textArr = [];
+
+localStorage.getItem('areaObj')
+    ? {count, textArr} = JSON.parse(localStorage.getItem('areaObj'))
+    : localStorage.setItem('areaObj', JSON.stringify({count, textArr}));
+
+textStepsArea.value = textArr[count - 1]||'';
+
+setTimeout(() => {
+    if (count > 0) {
+        leftBTN = document.createElement('button');
+        rightBTN = document.createElement('button');
+
+        leftBTN.innerText = '<';
+        leftBTN.setAttribute('arrow', 'left');
+
+        rightBTN.innerText = '>';
+        rightBTN.setAttribute('arrow', 'right');
+
+
+        addEventListener('click', ev => {
+            if (ev.target.attributes[0].value === 'left') {
+                if (count > 1) {
+                    count--;
+                    textStepsArea.value = textArr[count - 1];
+
+                    console.log(count);
+                } else {
+                    count = 0;
+                }
+            }
+            if (ev.target.attributes[0].value === 'right') {
+                if (count < textArr.length) {
+                    count++;
+                    textStepsArea.value = textArr[count - 1];
+
+                    console.log(count);
+                } else {
+                    count = textArr.length;
+                }
+            }
+        });
+
+
+        arrowsDiv.appendChild(leftBTN);
+        arrowsDiv.appendChild(rightBTN);
+    }
+
+    textStepsAreaBTN.addEventListener('click', () => {
+        if (textStepsArea.value && textStepsArea.value.trim() !== '') {
+            if (textArr.length > 10) {
+                textArr.shift();
+            }
+            textArr.push(textStepsArea.value);
+            count = textArr.length;
+            localStorage.setItem('areaObj', JSON.stringify({count, textArr}));
+        }
+        location.reload();
+    });
+}, 0)
+
+
