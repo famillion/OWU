@@ -98,7 +98,7 @@ localStorage.getItem('areaObj')
     ? {count, textArr} = JSON.parse(localStorage.getItem('areaObj'))
     : localStorage.setItem('areaObj', JSON.stringify({count, textArr}));
 
-textStepsArea.value = textArr[count - 1]||'';
+textStepsArea.value = textArr[count - 1] || '';
 
 setTimeout(() => {
     if (count > 0) {
@@ -117,8 +117,6 @@ setTimeout(() => {
                 if (count > 1) {
                     count--;
                     textStepsArea.value = textArr[count - 1];
-
-                    console.log(count);
                 } else {
                     count = 0;
                 }
@@ -153,4 +151,161 @@ setTimeout(() => {
     });
 }, 0)
 
+////============================== 4 ===================================================================================
+// - Реализуйте записную книгу, хранящую данные в локальном хранилище.
+//     Данные которые надо сохранять : ФИО, номер, почта, фирма, отдел, день рождения
+// Данные вводить через соответсвующую форму.
+// --Каждому контакту добавить кнопку для удаления контакта.
+// --Каждому контакту добавить кнопку редактироваиня. При нажати на нее появляется форма,
+// в которой есть все необходимые инпуты для редактирования, которые уже заполнены данными объекта
 
+function UserBook(lastname, firstname, patronymic, tel, email, firm, department, birthday, id) {
+    this.lastname = lastname;
+    this.firstname = firstname;
+    this.patronymic = patronymic;
+    this.tel = tel;
+    this.email = email;
+    this.firm = firm;
+    this.department = department;
+    this.birthday = birthday;
+    this.id = id;
+}
+
+let usrBookForm = document.userBookForm;
+let usBkDiv = document.querySelector('.user-book');
+let saveInBookBtn = document.querySelector('.user-book-btn');
+let userBookList = JSON.parse(localStorage.getItem('userBook'))||[];
+
+
+
+if (userBookList && userBookList.length > 0) {
+    let divUsers = document.createElement('div');
+    for (const user of userBookList) {
+
+        let userParsed = JSON.parse(user);
+        console.log(userParsed);
+        let {id, lastname, firstname, patronymic, tel, email, firm, department, birthday} = userParsed;
+        id = userBookList.indexOf(user) + 1;
+        let usr = document.createElement('div');
+        usr.classList.add('user');
+
+        let numDiv = document.createElement('div');
+        numDiv.style.textAlign = 'center';
+        numDiv.style.fontSize = '2em';
+        numDiv.innerText = id;
+
+        usr.appendChild(numDiv);
+
+        let fio = document.createElement('div');
+        fio.innerText = `ФИО: ${lastname} ${firstname} ${patronymic}`;
+        usr.appendChild(fio);
+
+        let telf = document.createElement('div');
+        telf.innerText = `tel: ${tel}`;
+        usr.appendChild(telf);
+
+        let ml = document.createElement('div');
+        ml.innerText = `почта: ${email}`
+        usr.appendChild(ml);
+
+        let firma = document.createElement('div');
+        firma.innerText = `фирма: ${firm}`
+        usr.appendChild(firma);
+
+        let dep = document.createElement('div');
+        dep.innerText = `почта: ${department}`
+        usr.appendChild(dep);
+
+        let bir = document.createElement('div');
+        bir.innerText = `почта: ${birthday}`
+        usr.appendChild(bir);
+
+        let editBlock = document.createElement('div');
+        editBlock.classList.add('user-form-block');
+
+        let editBTN = document.createElement('button');
+        editBTN.innerText = 'Edit';
+
+        let editFormBlock = document.createElement('div');
+        editFormBlock.classList.add('hidden');
+
+        let editForm = usrBookForm.cloneNode(true);
+
+        editForm.lastname.value = lastname;
+        editForm.firstname.value = firstname;
+        editForm.patronymic.value = patronymic;
+        editForm.tel.value = tel;
+        editForm.email.value = email;
+        editForm.firm.value = firm;
+        editForm.department.value = department;
+        editForm.birthday.value = birthday;
+
+
+        editBTN.addEventListener('click', () => {
+            editFormBlock.classList.toggle('hidden');
+        });
+
+        let innerSaveBTN = saveInBookBtn.cloneNode();
+        innerSaveBTN.innerText = 'Save';
+
+        innerSaveBTN.addEventListener('click', () => {
+            userParsed.lastname = editForm.lastname.value;
+            userParsed.firstname = editForm.firstname.value;
+            userParsed.patronymic = editForm.patronymic.value;
+            userParsed.tel = editForm.tel.value;
+            userParsed.email = editForm.email.value;
+            userParsed.firm = editForm.firm.value;
+            userParsed.department = editForm.department.value;
+            userParsed.birthday = editForm.birthday.value;
+
+            userBookList[id-1] = JSON.stringify(userParsed);
+
+            localStorage.setItem('userBook', JSON.stringify(userBookList));
+            setTimeout(() => {
+                editFormBlock.classList.toggle('hidden');
+                location.reload();
+            }, 1000);
+        });
+
+        editFormBlock.appendChild(editForm);
+        editFormBlock.appendChild(innerSaveBTN);
+
+        editBlock.appendChild(editBTN);
+        editBlock.appendChild(editFormBlock);
+
+        let deleteBTN = document.createElement('button');
+        deleteBTN.innerText = 'Delete';
+
+        deleteBTN.addEventListener('click', () => {
+            userBookList.splice(id - 1, 1);
+            localStorage.setItem('userBook', JSON.stringify(userBookList));
+            location.reload();
+        });
+
+
+
+        usr.appendChild(editBlock);
+
+        usr.appendChild(deleteBTN);
+
+        divUsers.appendChild(usr);
+
+        usBkDiv.appendChild(divUsers);
+    }
+}
+
+saveInBookBtn.addEventListener('click', () => {
+    if (usrBookForm.lastname && usrBookForm.firstname && usrBookForm.email) {
+        let us = new UserBook(usrBookForm.lastname.value, usrBookForm.firstname.value, usrBookForm.patronymic.value,
+            usrBookForm.tel.value, usrBookForm.email.value, usrBookForm.firm.value, usrBookForm.department.value,
+            usrBookForm.birthday.value, userBookList?(userBookList.length + 1):1);
+
+        userBookList.push(JSON.stringify(us));
+
+        localStorage.setItem('userBook', JSON.stringify(userBookList));
+
+        location.reload();
+    } else {
+        alert('Enter Name Surname and email');
+    }
+});
