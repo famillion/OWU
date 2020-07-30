@@ -183,7 +183,7 @@ if (userBookList && userBookList.length > 0) {
     for (const user of userBookList) {
 
         let userParsed = JSON.parse(user);
-        console.log(userParsed);
+
         let {id, lastname, firstname, patronymic, tel, email, firm, department, birthday} = userParsed;
         id = userBookList.indexOf(user) + 1;
         let usr = document.createElement('div');
