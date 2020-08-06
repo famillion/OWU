@@ -37,7 +37,6 @@ async function printText(text,field,btn) {
     for (const char of text) {
         await printChar(char, field);
     }
-    console.log('ku');
     await btnEnable(btn);
 }
 
