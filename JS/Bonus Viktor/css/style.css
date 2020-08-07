@@ -1,12 +1,26 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
-.typewriter{
+button{
+    padding: 5px;
+    outline-style: none;
+}
+
+h2{
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.typewriter,
+.all-a-to-b-numbers{
     margin: 20px auto;
     padding: 10px;
     width: 600px;
-    min-height: 400px;
+    min-height: 100px;
     background-color: cadetblue;
 }
 
@@ -16,10 +30,32 @@
     margin-bottom: 10px;
 }
 
-.typewriter .typewriter-print-text{
+.typewriter .typewriter-print-text,
+.all-a-to-b-numbers .all-a-to-b-numbers-result{
     margin-top: 10px;
     width: 100%;
-    min-height: 300px;
+    min-height: 50px;
     background-color: aqua;
     box-shadow: 0 0 31px -2px rgba(0,0,0,0.75);
+}
+
+.all-a-to-b-numbers input{
+    width: 15%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.all-a-to-b-numbers span{
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.alert{
+    color: red;
+}
+
+.hidden{
+    display: none;
 }

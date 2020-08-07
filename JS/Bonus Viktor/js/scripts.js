@@ -25,7 +25,7 @@ function printChar(char, field) {
 function btnEnable(btn) {
     return new Promise(resolve => {
         setTimeout(() => {
-            if(btn.hasAttribute('disabled')){
+            if (btn.hasAttribute('disabled')) {
                 btn.removeAttribute('disabled');
                 resolve();
             }
@@ -33,7 +33,7 @@ function btnEnable(btn) {
     });
 }
 
-async function printText(text,field,btn) {
+async function printText(text, field, btn) {
     for (const char of text) {
         await printChar(char, field);
     }
@@ -51,21 +51,85 @@ printBTN.onclick = (e) => {
 // Даны два целых числа A и В (каждое в отдельной строке).
 // Выведите все числа от A до B включительно, в порядке возрастания,
 //     если A < B, или в порядке убывания в противном случае.
-//
-//     ##########################################################
-//
+
+let showNumBTN = document.querySelector('.all-a-to-b-numbers-btn');
+let showNumField = document.querySelector('.all-a-to-b-numbers-result');
+let alertText = document.querySelector('.alert');
+
+let inputA = document.allNumbers.a;
+let inputB = document.allNumbers.b;
+
+showNumBTN.addEventListener('click', () => {
+    showNumField.innerHTML = '';
+
+    let A = +inputA.value;
+    let B = +inputB.value;
+
+    alertText.classList.contains('hidden') ? alertText.classList.contains('hidden') : alertText.classList.add('hidden');
+
+    if (!isNaN(A) && !isNaN(B)) {
+        if (A < B) {
+            do {
+                showNumField.innerHTML += A++ + ' ';
+            } while (A - 1 !== B)
+        } else if (A > B) {
+            do {
+                showNumField.innerHTML += A-- + ' ';
+            } while (A + 1 !== B)
+        } else {
+            showNumField.innerHTML += `${A} ${B} `
+        }
+    } else {
+        alertText.classList.toggle('hidden');
+    }
+});
+
+//     ###################### 3 ####################################
 //     Точная степень двойки
 // Дано натуральное число N.
 //     Выведите слово YES, если число N является точной степенью двойки, или слово NO в противном случае.
 //     Операцией возведения в степень пользоваться нельзя!
+
+
+// let N = +prompt('Введіть ціле натуральне число')
 //
-//     #####################################################################
+// function isStepen2(n) {
+//     while (n>1){
+//         if(n%2!==0){
+//             alert('NO');
+//             console.log('NO');
+//             return false
+//         }
+//         n /= 2;
+//     }
+//     console.log('YES');
+//     alert('YES');
+//     return true;
+// }
+//
+// if (!isNaN(N)) {
+//     isStepen2(N);
+// }
+
+
+//     ####################### 4 ##############################################
 //     Сумма цифр числа
 // Дано натуральное число N. Вычислите сумму его цифр.
 //     При решении этой задачи нельзя использовать строки,
 //     списки, массивы ну и циклы, разумеется.
-//
-//     #####################################################################
+
+function numbersSum(num) {
+    let sum = num;
+    if(num>0){
+        num--;
+        sum += numbersSum(num);
+    }
+    return sum;
+}
+
+console.log(numbersSum(10));
+
+//     ######################## 5 #############################################
 //     Цифры числа справа налево
 // Дано натуральное число N.
 //     Выведите все его цифры по одной, в обратном порядке, разделяя их пробелами или новыми строками.
