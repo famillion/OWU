@@ -25,13 +25,12 @@
             return {
                 todoArr: [],
                 todoStr: '',
-                count: 0
             }
         },
 
       computed:{
         hidd() {
-          return  this.count >= 10 ? 'hidden': '';
+          return  this.todoArr.length >= 10 ? 'hidden': '';
         }
       },
 
@@ -39,17 +38,13 @@
             addTest() {
                 if (this.todoStr) {
                     this.todoArr.push(this.todoStr);
-                    this.count++;
-                    console.log(this.count);
                 }
             },
 
             delStr(ev) {
                 let el = ev.target.parentElement.childNodes[0].nodeValue.trim();
                 this.todoArr.splice(this.todoArr.indexOf(el), 1);
-                this.count--;
-                console.log(this.count);
-            },
+            }
         }
     }
 </script>
