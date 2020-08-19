@@ -25,8 +25,7 @@
             return {
                 todoArr: [],
                 todoStr: '',
-                count: 0,
-                hide: 'hidden'
+                count: 0
             }
         },
 
