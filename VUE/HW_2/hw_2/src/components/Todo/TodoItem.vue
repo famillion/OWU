@@ -1,18 +1,12 @@
 <template>
     <li>
-        <input type="checkbox" v-model="isChecked">
+        <input type="checkbox" v-model="todo.isChecked">
         <span>{{pushValue}}{{todo.todo}}</span>
     </li>
 </template>
 <script>
     export default {
         name: 'TodoItem',
-
-        data() {
-            return {
-                isChecked: false,
-            }
-        },
 
         props: {
             todo: {
@@ -28,7 +22,6 @@
 
         methods: {
             setAndPushValue() {
-                this.todo.isChecked = this.isChecked
                 this.$emit('push-to-list', this.todo);
             }
         },
