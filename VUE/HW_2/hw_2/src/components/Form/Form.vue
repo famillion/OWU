@@ -34,11 +34,15 @@
 
         methods: {
             sendForm() {
-                console.log(this.formValues);
-                this.formValues = this.defaultValures();
+                if (this.formValues.email
+                    && this.formValues.pass
+                    && this.formValues.sex) {
+                    console.log(this.formValues);
+                    this.formValues = this.defaultValues();
+                }
             },
 
-            defaultValures(){
+            defaultValues(){
                 return {
                     email: '',
                     pass: '',
