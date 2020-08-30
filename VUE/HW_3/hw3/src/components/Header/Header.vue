@@ -5,7 +5,7 @@
                     class="nav-item nav-link"
                     active-class="active"
                     tag="li"
-                    to="/"
+                    :to="{name: 'Home'}"
                     exact
             >
                 Home
@@ -14,7 +14,7 @@
                     class="nav-item nav-link"
                     active-class="active"
                     tag="li"
-                    to="/contacts"
+                    :to="{name: 'Contacts'}"
                     exact
             >
                 Contacts
@@ -23,7 +23,7 @@
                     class="nav-item nav-link"
                     active-class="active"
                     tag="li"
-                    to="/my_projects"
+                    :to="{name: 'MyProjects'}"
                     exact
             >
                 My Projects

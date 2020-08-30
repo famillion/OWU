@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="row shadow">
-            <div class="col-4 offset-1 sizing">
+        <div class="row rounded shadow">
+            <div class="col-4 offset-1 p-4">
                 <img :src="chuck" alt="Chuck" class="photo">
             </div>
             <div class="col-6  test2">
@@ -30,10 +30,6 @@
 <style>
     h1{
         margin: 20px 0;
-    }
-    .col-4.sizing{
-        padding: 0;
-        box-sizing: border-box;
     }
 
     .photo{

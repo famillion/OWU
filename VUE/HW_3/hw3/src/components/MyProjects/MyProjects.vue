@@ -1,38 +1,29 @@
 <template>
     <div class="container">
         <div class="row shadow">
-            <div class="col">
-                <div class="project-block shadow">
-                    <h2>Create New User</h2>
-                </div>
+            <div class="col-3 p-3">
+                <MyProjsMenu/>
             </div>
-            <div class="col">
+            <div class="col-9 p-3">
                 <div class="project-block shadow">
-                    <h2>All Users</h2>
+                    <router-view/>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
 <script>
+
+    import MyProjsMenu from "./Add_User_Form/MyProjsMenu";
 
     export default {
         name: 'Contacts',
-        data() {
-            return {
 
-            }
-        }
+        components:{
+            MyProjsMenu,
+        },
+
     }
 
 </script>
-
-<style scoped>
-    .project-block{
-        margin: 20px 0;
-        width: 100%;
-        height: 100px;
-        border-radius: 5px;
-    }
-
-</style>
