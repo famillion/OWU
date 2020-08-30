@@ -127,12 +127,11 @@
                     this.checkInput(this.isWarning.email),
                     this.checkInput(this.isWarning.password),
                 ]
-            }
+            },
         },
 
         methods: {
             todoListInObj(ev) {
-                console.log(ev);
                 this.userForm.objTodoList = ev;
             },
 
@@ -151,7 +150,13 @@
                     && this.userForm.password) {
 
                     this.$http.post('https://owu-vue-db.firebaseio.com/users.json', this.userForm);
-
+                    this.userForm.name = '';
+                    this.userForm.surname = '';
+                    this.userForm.email = '';
+                    this.userForm.password = '';
+                    this.userForm.gender = '';
+                    this.userForm.sendsCheck.length = 0;
+                    this.userForm.objTodoList.length = 0;
                 } else {
                     if (!this.userForm.name) {
                         this.tumblerFlag('name');
