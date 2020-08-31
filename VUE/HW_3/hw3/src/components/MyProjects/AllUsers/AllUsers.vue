@@ -2,16 +2,54 @@
     <div class="container">
         <div class="row p-4 rounded">
             <div class="col">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores aut beatae culpa dolor
-                doloremque exercitationem facere fugiat incidunt laudantium libero nisi perferendis, quo, quos soluta!
-                Ad assumenda sapiente voluptatibus!
+                <div class="user-list">
+                    <h2>Users List</h2>
+                    <ul class="list-group">
+                        <div class="d-flex align-items-center text-secondary rounded"
+                             v-for="(user, id) in users"
+                             :key="id"
+                        >
+                            <UserItem :user="user"
+                                      :id="id"
+                                      :count="count++"
+                            />
+                        </div>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import UserItem from "./UserItem";
+
     export default {
-        name: 'AllUsers.vue',
+        name: 'AllUsers',
+
+        components: {
+            UserItem,
+        },
+
+        data() {
+            return {
+                users: {},
+                count: 1
+            }
+        },
+
+        methods: {
+            getUsersFromDB() {
+                return this.$http.get('https://owu-vue-db.firebaseio.com/users.json')
+                    .then(res => {
+                        this.users = res.data;
+                    }).then(()=>console.log(this.users))
+            }
+        },
+
+        created() {
+            this.getUsersFromDB();
+        }
     }
 </script>

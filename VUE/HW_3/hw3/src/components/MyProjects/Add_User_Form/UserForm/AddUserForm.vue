@@ -34,8 +34,8 @@
                     </div>
                     <fieldset class="form-group">
                         <div class="row">
-                            <legend class="col-form-label col-sm-2 pt-0">Gender:</legend>
-                            <div class="col-sm-10">
+                            <legend class="col-form-label col-sm-3 pt-0">Gender:</legend>
+                            <div class="col-sm-6">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="gender" id="male" value="Male"
                                            checked
@@ -83,7 +83,10 @@
         </div>
         <div class="row">
                 <div class="col-4 offset-4 mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" @click="sendForm">Create User</button>
+                    <button id="btnCreate" class="btn btn-primary btn-lg btn-block" @click="sendForm">Create User</button>
+                    <small v-show="isCreated" class="form-text text-muted text-center">
+                        User created!
+                    </small>
                 </div>
         </div>
     </div>
@@ -115,7 +118,9 @@
                     email: false,
                     password: false
                 },
-                warningBorder: 'border border-danger'
+                warningBorder: 'border border-danger',
+
+                isCreated: false
             }
         },
 
@@ -143,12 +148,19 @@
                 this.isWarning[value] = true;
             },
 
+            showInfoBtnText(){
+                this.isCreated = true;
+                setTimeout(() => {
+                    this.isCreated = false;
+                }, 4000);
+            },
+
             sendForm() {
                 if (this.userForm.name
                     && this.userForm.surname
                     && this.userForm.email
                     && this.userForm.password) {
-
+                    this.showInfoBtnText();
                     this.$http.post('https://owu-vue-db.firebaseio.com/users.json', this.userForm);
                     this.userForm.name = '';
                     this.userForm.surname = '';
@@ -157,6 +169,7 @@
                     this.userForm.gender = '';
                     this.userForm.sendsCheck.length = 0;
                     this.userForm.objTodoList.length = 0;
+
                 } else {
                     if (!this.userForm.name) {
                         this.tumblerFlag('name');

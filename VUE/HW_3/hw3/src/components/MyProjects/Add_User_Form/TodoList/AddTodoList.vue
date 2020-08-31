@@ -60,7 +60,6 @@
             },
 
             tdlCheck(){
-                console.log(this.todoList);
                 this.$emit('check-todo-list', this.todoList)
             }
 

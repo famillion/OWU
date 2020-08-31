@@ -18,7 +18,7 @@
     import MyProjsMenu from "./Add_User_Form/MyProjsMenu";
 
     export default {
-        name: 'Contacts',
+        name: 'MyProjects',
 
         components:{
             MyProjsMenu,

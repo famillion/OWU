@@ -17,11 +17,13 @@
 </template>
 <script>
 
+
+
     export default {
         name: 'Home',
         data(){
             return{
-                chuck: 'https://m.actve.net/evropa2/2018/09/foto-web-detail-440x355px-chuckn.png',
+                chuck: this.$store.state.avatar,
             }
         }
     }
