@@ -1,5 +1,5 @@
 <template>
-    <li class="list-group-item list-group-item-action">{{count}}. {{user.name}} {{user.surname}} {{user.id=id}}</li>
+    <li class="list-group-item list-group-item-action">{{id+1}}. {{user.name}} {{user.surname}} </li>
 </template>
 
 <script>
@@ -13,8 +13,7 @@
 
         props: {
             user: {type: Object},
-            id: {type: String},
-            count: {type: Number}
+            id: {type: Number}
         }
     }
 </script>

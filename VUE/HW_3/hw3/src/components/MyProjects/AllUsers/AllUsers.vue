@@ -11,7 +11,6 @@
                         >
                             <UserItem :user="user"
                                       :id="id"
-                                      :count="count++"
                             />
                         </div>
                     </ul>
@@ -34,7 +33,7 @@
 
         data() {
             return {
-                users: {},
+                users: [],
                 count: 1
             }
         },
@@ -43,7 +42,11 @@
             getUsersFromDB() {
                 return this.$http.get('https://owu-vue-db.firebaseio.com/users.json')
                     .then(res => {
-                        this.users = res.data;
+                        const newRes = res.data
+                        for (const el in newRes) {
+                            newRes[el].id = el;
+                            this.users.push(newRes[el])
+                        }
                     }).then(()=>console.log(this.users))
             }
         },
