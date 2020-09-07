@@ -10,10 +10,11 @@
                              :key="id"
                         >
                             <UserItem :user="user"
-                                      :id="id"
+                                      :indx="id"
                             />
                         </div>
                     </ul>
+
                 </div>
 
             </div>
@@ -47,7 +48,7 @@
                             newRes[el].id = el;
                             this.users.push(newRes[el])
                         }
-                    }).then(()=>console.log(this.users))
+                    })
             }
         },
 

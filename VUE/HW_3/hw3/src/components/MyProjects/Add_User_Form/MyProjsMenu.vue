@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row rounded">
             <div class="col">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <router-link class="nav-link active" id="v-pills-home-tab" data-toggle="pill" role="tab"

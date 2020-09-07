@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import Vue from "vue";
 import AddUserForm from "../components/MyProjects/Add_User_Form/UserForm/AddUserForm";
 import AllUsers from "../components/MyProjects/AllUsers/AllUsers";
+// import UserInfo from "../components/MyProjects/AllUsers/UserInfo";
 
 
 Vue.use(VueRouter);
@@ -15,11 +16,8 @@ const routes = [
     {path: '/my_projects', component: MyProjects, name: 'MyProjects', redirect: {name: 'CreateUserForm'},
         children:[
             {path:'', component: AddUserForm, name: 'CreateUserForm'},
-            {path: '/all_users', component: AllUsers, name: 'AllUsers',
-            // children:[
-            //     {path: '/:id', component: UserItem, name: 'UserItem'}
-            // ]
-            }
+            {path: '/all_users', component: AllUsers, name: 'AllUsers'},
+            // {path: '/all_users/:id', component: UserInfo, name: 'UserInfo'}
         ]
     },
 ];

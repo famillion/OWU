@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row shadow">
+        <div class="row rounded shadow">
             <div class="col-3 p-3">
                 <MyProjsMenu/>
             </div>

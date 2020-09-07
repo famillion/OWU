@@ -1,10 +1,10 @@
 <template>
     <div class="container">
         <div class="row p-4 rounded">
-            <div class="col">
+            <div class="col rounded">
                 <form action="">
                     <h2>Create New User</h2>
-                    <div class="form-group">
+                    <div class="form-group rounded">
                         <label for="name">Name *</label>
                         <input type="text" id="name"
                                :class="['form-control', warningFlag[0]]"
@@ -81,7 +81,7 @@
                     @check-todo-list="todoListInObj"
             />
         </div>
-        <div class="row">
+        <div class="row rounded">
                 <div class="col-4 offset-4 mb-4">
                     <button id="btnCreate" class="btn btn-primary btn-lg btn-block" @click="sendForm">Create User</button>
                     <small v-show="isCreated" class="form-text text-muted text-center">
