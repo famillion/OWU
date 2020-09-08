@@ -1,0 +1,9 @@
+<div class="todo-list-block">
+  <h1>{{title}}</h1>
+  <ul>
+    <app-todo-item *ngFor="let todo of todoList"
+    [todo] = "todo"
+    ></app-todo-item>
+  </ul>
+</div>
+
