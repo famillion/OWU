@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row flex-column">
+    <div class="col mt-2 p-4 shadow rounded justify-content-center">
+      <app-add-todo-item
+        (addTodo)="addToDo($event)"
+        [todoArr]="todoArr"
+      ></app-add-todo-item>
+    </div>
+    <div class="col mt-2 p-4 shadow rounded justify-content-center">
+      <ul class="list-group">
+        <app-todo-item
+          *ngFor="let todo of todoArr; let indx = index"
+          [todo] = "todo"
+          [index]="indx+1"
+        ></app-todo-item>
+      </ul>
+    </div>
+  </div>
+</div>
