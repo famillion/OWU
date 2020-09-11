@@ -16,4 +16,8 @@ export class TodoBlockComponent implements OnInit {
     this.todoArr.push(str);
   }
 
+  removeStr(ev): void{
+    this.todoArr = this.todoArr.filter(((value, index) => index !== ev));
+  }
+
 }

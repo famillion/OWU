@@ -11,7 +11,8 @@
         <app-todo-item
           *ngFor="let todo of todoArr; let indx = index"
           [todo] = "todo"
-          [index]="indx+1"
+          [index]="indx"
+          (removeStrIdx)="removeStr($event)"
         ></app-todo-item>
       </ul>
     </div>
