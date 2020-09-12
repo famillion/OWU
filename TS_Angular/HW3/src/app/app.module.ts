@@ -8,7 +8,7 @@ import { TodoBlockComponent } from './todo/todo-block/todo-block.component';
 import { TodoItemComponent } from './todo/todo-item/todo-item.component';
 import { AddTodoItemComponent } from './todo/add-todo-item/add-todo-item.component';
 import {FormsModule} from '@angular/forms';
-import { StyletestDirective } from './derectives/styletest.directive';
+import { StyletestDirective } from './directives/styletest.directive';
 
 @NgModule({
   declarations: [
