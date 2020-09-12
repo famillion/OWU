@@ -1,4 +1,4 @@
-<li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" (click)="isChanged = !isChanged">
+<li appStyle class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" (click)="isChanged = !isChanged">
   {{index+1}}. {{todo}}
   <button
     *ngIf="isChanged"
