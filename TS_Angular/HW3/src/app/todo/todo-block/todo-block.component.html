@@ -1,18 +1,13 @@
 <div class="container">
   <div class="row flex-column">
     <div class="col mt-2 p-4 shadow rounded justify-content-center">
-      <app-add-todo-item
-        (addTodo)="addToDo($event)"
-        [todoArr]="todoArr"
-      ></app-add-todo-item>
+      <app-add-todo-item></app-add-todo-item>
     </div>
-    <div class="col mt-2 p-4 shadow rounded justify-content-center" *ngIf="todoArr.length">
+    <div class="col mt-2 p-4 shadow rounded justify-content-center" *ngIf="todoService.todoArr.length">
       <ul class="list-group">
         <app-todo-item
-          *ngFor="let todo of todoArr; let indx = index"
-          [todo] = "todo"
+          *ngFor="let todo of todoService.todoArr; let indx = index"
           [index]="indx"
-          (removeStrIdx)="removeStr($event)"
         ></app-todo-item>
       </ul>
     </div>

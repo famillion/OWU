@@ -1,11 +1,11 @@
 <div class="input-group">
-  <input type="text" class="form-control" placeholder="Enter toDo" aria-label="Enter toDo" aria-describedby="button-addon2"
-         [(ngModel)]="inputTodo"
+  <input #inputValue type="text" class="form-control" placeholder="Enter toDo" aria-label="Enter toDo" aria-describedby="button-addon2"
+
   >
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-            *ngIf="todoArr.length <= 9"
-            (click)="addTodoClick()"
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2" #addBTN
+            *ngIf="todoService.todoArr.length <= 9"
+            (click)="todoService.addToDo(inputValue)"
     >
       Add ToDo
     </button>

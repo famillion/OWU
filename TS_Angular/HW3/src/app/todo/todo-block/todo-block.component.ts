@@ -1,23 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import {TodoService} from '../services/todo.service';
 
 @Component({
   selector: 'app-todo-block',
   templateUrl: './todo-block.component.html',
   styleUrls: ['./todo-block.component.css']
 })
-export class TodoBlockComponent implements OnInit {
+export class TodoBlockComponent {
 
-  todoArr = [];
-
-  ngOnInit(): void {
-  }
-
-  addToDo(str: string): void{
-    this.todoArr.push(str);
-  }
-
-  removeStr(ev): void{
-    this.todoArr = this.todoArr.filter(((value, index) => index !== ev));
-  }
+ constructor(private todoService: TodoService) {
+ }
 
 }
