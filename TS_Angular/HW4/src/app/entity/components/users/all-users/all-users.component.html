@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="list-group mt-3">
+        <app-user *ngFor="let user of users;
+        let idx = index"
+                  [user]="user"
+                  [idx]="idx"
+        ></app-user>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row flex-column shadow-sm">
+    <ul class="nav nav-tabs justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="users">Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="posts">Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="comments">Comments</a>
+      </li>
+    </ul>
+    <div class="col-8 offset-2 shadow-lg p-4 rounded">
+      <router-outlet #main></router-outlet>
+    </div>
+  </div>
+</div>
