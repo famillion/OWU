@@ -3,11 +3,11 @@
     <div class="col mt-2 p-4 shadow rounded justify-content-center">
       <app-add-todo-item></app-add-todo-item>
     </div>
-    <div class="col mt-2 p-4 shadow rounded justify-content-center" *ngIf="todoService.todoArr.length">
+    <div class="col mt-2 p-4 shadow rounded justify-content-center" *ngIf="getTodoService().todoArr.length">
       <ul class="list-group">
         <app-todo-item
-          *ngFor="let todo of todoService.todoArr; let indx = index"
-          [index]="indx"
+          *ngFor="let todo of getTodoService().todoArr; let idx = index"
+          [index]="idx"
         ></app-todo-item>
       </ul>
     </div>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {TodoService} from '../services/todo.service';
 
 @Component({
@@ -9,6 +9,10 @@ import {TodoService} from '../services/todo.service';
 export class AddTodoItemComponent {
 
   constructor(private todoService: TodoService) {
+  }
+
+  getTodoService(): TodoService{
+    return this.todoService;
   }
 
 }

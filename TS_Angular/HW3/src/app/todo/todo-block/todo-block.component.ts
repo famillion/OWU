@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {TodoService} from '../services/todo.service';
 
 @Component({
@@ -10,5 +10,9 @@ export class TodoBlockComponent {
 
  constructor(private todoService: TodoService) {
  }
+
+  getTodoService(): TodoService{
+    return this.todoService;
+  }
 
 }

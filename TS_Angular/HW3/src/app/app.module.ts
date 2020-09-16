@@ -16,13 +16,13 @@ import { StyletestDirective } from './directives/styletest.directive';
     TodoBlockComponent,
     TodoItemComponent,
     AddTodoItemComponent,
-    StyletestDirective
+    StyletestDirective,
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         NgbModule,
-        FormsModule
+        FormsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
