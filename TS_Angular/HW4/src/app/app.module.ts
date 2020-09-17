@@ -9,6 +9,7 @@ import {RouterModule} from '@angular/router';
 import {UsersResolveService} from './entity/services/all-users-resolve-service/users-resolve.service';
 import {HttpClientModule} from '@angular/common/http';
 import {UserComponent} from './entity/components/users/user/user.component';
+import { AboutUserComponent } from './entity/components/users/about-user/about-user.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {UserComponent} from './entity/components/users/user/user.component';
     AppComponent,
     AllUsersComponent,
     UserComponent,
+    AboutUserComponent,
 
   ],
   imports: [
@@ -26,7 +28,7 @@ import {UserComponent} from './entity/components/users/user/user.component';
     RouterModule.forRoot([
       {path: '', pathMatch: 'full', redirectTo: 'users'},
       {path: 'users', component: AllUsersComponent, resolve: {users: UsersResolveService}},
-
+      {path: 'users/:id', component: AboutUserComponent}
     ])
   ],
   providers: [],

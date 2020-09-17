@@ -13,8 +13,4 @@ export class UserComponent {
 
   constructor() { }
 
-  getIdx():number{
-    return this.idx;
-  }
-
 }
