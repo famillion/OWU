@@ -10,6 +10,8 @@ import {UsersResolveService} from './entity/services/all-users-resolve-service/u
 import {HttpClientModule} from '@angular/common/http';
 import {UserComponent} from './entity/components/users/user/user.component';
 import { AboutUserComponent } from './entity/components/users/about-user/about-user.component';
+import { UserPostsComponent } from './entity/components/users/user/user-posts/user-posts.component';
+import { UserCommentsComponent } from './entity/components/users/user/user-comments/user-comments.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { AboutUserComponent } from './entity/components/users/about-user/about-u
     AllUsersComponent,
     UserComponent,
     AboutUserComponent,
+    UserPostsComponent,
+    UserCommentsComponent,
 
   ],
   imports: [
