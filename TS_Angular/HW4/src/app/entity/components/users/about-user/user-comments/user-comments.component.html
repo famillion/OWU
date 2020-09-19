@@ -1,0 +1,19 @@
+<div class="container mt-2"
+     *ngFor="let comment of userComments"
+>
+  <div class="row">
+    <div class="col offset-4 p-3 shadow rounded">
+      <h5>
+        {{comment.name}}
+      </h5>
+      <small class="text-muted">email: {{comment.email}}</small>
+      <p class="text-justify">
+        {{comment.body}}
+      </p>
+      <small class="text-muted">Comment ID: {{comment.id}}</small> | <small class="text-muted">Post ID: {{comment.postId}}</small>
+    </div>
+  </div>
+</div>
+
+
+

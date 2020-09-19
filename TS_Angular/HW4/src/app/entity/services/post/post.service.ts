@@ -8,8 +8,6 @@ import {Observable} from 'rxjs';
 })
 export class PostService {
 
-  posts: Post[];
-
   constructor(private http: HttpClient) { }
 
   getAllPosts(): Observable<Post[]>{

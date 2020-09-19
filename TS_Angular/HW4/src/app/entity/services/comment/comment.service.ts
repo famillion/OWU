@@ -1,22 +1,21 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {PHComment} from '../../models/Comment/PHComment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommentService {
 
-  comments: Comment[];
-
   constructor(private http: HttpClient) {
   }
 
-  getAllComments(): Observable<Comment[]> {
-    return this.http.get<Comment[]>('https://jsonplaceholder.typicode.com/comments/');
+  getAllComments(): Observable<PHComment[]> {
+    return this.http.get<PHComment[]>('https://jsonplaceholder.typicode.com/comments/');
   }
 
-  getCommentById(id): Observable<Comment> {
-    return this.http.get<Comment>(`https://jsonplaceholder.typicode.com/comments/${id}`);
+  getCommentById(id): Observable<PHComment> {
+    return this.http.get<PHComment>(`https://jsonplaceholder.typicode.com/comments/${id}`);
   }
 }

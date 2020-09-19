@@ -1,0 +1,26 @@
+<div class="container mt-2 "
+*ngFor="let post of getUserPostsOnly()"
+>
+  <div class="row">
+    <div class="col p-3 shadow rounded">
+      <h5>
+        {{post?.title}}
+      </h5>
+      <p class="text-justify">
+        {{post?.body}}
+      </p>
+      <small class="text-muted">Post ID: {{post?.id}}</small>
+      <button type="button" class="btn btn-outline-secondary btn-sm w-25 offset-6"
+            (click)="post.isShowComment = !post.isShowComment"
+      >
+        Comments
+      </button>
+
+      <app-user-comments *ngIf="post.isShowComment"  [post]="post"></app-user-comments>
+
+    </div>
+
+  </div>
+</div>
+
+

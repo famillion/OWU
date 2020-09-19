@@ -10,8 +10,12 @@ import {UsersResolveService} from './entity/services/all-users-resolve-service/u
 import {HttpClientModule} from '@angular/common/http';
 import {UserComponent} from './entity/components/users/user/user.component';
 import { AboutUserComponent } from './entity/components/users/about-user/about-user.component';
-import { UserPostsComponent } from './entity/components/users/user/user-posts/user-posts.component';
-import { UserCommentsComponent } from './entity/components/users/user/user-comments/user-comments.component';
+import { UserPostsComponent } from './entity/components/users/about-user/user-posts/user-posts.component';
+import { UserCommentsComponent } from './entity/components/users/about-user/user-comments/user-comments.component';
+import { AllPostsComponent } from './entity/components/posts/all-posts/all-posts.component';
+import { PostComponent } from './entity/components/posts/post/post.component';
+import {UserPostsResolveService} from './entity/services/user-posts-resolve/user-posts-resolve.service';
+import {UserCommentsResolveService} from './entity/services/user-comments-resolve/user-comments-resolve.service';
 
 
 @NgModule({
@@ -22,6 +26,8 @@ import { UserCommentsComponent } from './entity/components/users/user/user-comme
     AboutUserComponent,
     UserPostsComponent,
     UserCommentsComponent,
+    AllPostsComponent,
+    PostComponent,
 
   ],
   imports: [
@@ -32,7 +38,11 @@ import { UserCommentsComponent } from './entity/components/users/user/user-comme
     RouterModule.forRoot([
       {path: '', pathMatch: 'full', redirectTo: 'users'},
       {path: 'users', component: AllUsersComponent, resolve: {users: UsersResolveService}},
-      {path: 'users/:id', component: AboutUserComponent}
+      {path: 'users/:id', component: AboutUserComponent, children:
+      [
+        {path: 'user-posts', component: UserPostsComponent, resolve: {allPosts: UserPostsResolveService}},
+      ]},
+      {path: 'posts', component: AllPostsComponent}
     ])
   ],
   providers: [],

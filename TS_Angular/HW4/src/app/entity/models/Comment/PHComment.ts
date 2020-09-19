@@ -1,4 +1,4 @@
-export interface Comment {
+export interface PHComment {
   postId: number;
   id: number;
   email: string;

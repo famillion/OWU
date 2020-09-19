@@ -9,6 +9,6 @@ import {AppComponent} from '../app.component';
 
 export class TodolistComponent {
 
-  @Input() todo: AppComponent;
+  @Input() todo: string;
 
 }

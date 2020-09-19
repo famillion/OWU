@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d723f31c-c420-46cf-859f-bf07daf1af8c" name="Default Changelist" comment="TypeScript HW 1 plus some menu">
+      <change afterPath="$PROJECT_DIR$/../../JS/Bonus Viktor/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/Bonus Viktor/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/Bonus Viktor/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/Bonus Viktor/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/Bonus Viktor/Bonus Viktor.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_10/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_10/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_10/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_10/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_10/HW_10.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_5/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_5/.idea/HW_5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_5/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_5/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_5/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_6/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_6/.idea/HW_6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_6/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_6/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_6/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_7/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_7/.idea/HW_7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_7/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_7/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_7/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_7/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_7/img/icons/arrowLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_7/img/icons/arrowRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_8/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_8/.idea/HW_8.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_8/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_8/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_8/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_9/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_9/.idea/HW_9.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_9/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_9/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/HW_9/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SQL/.idea/SQL.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/HW_1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vrtest/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vrtest/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vrtest/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vrtest/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_1/HW_1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_2/.idea/HW_2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_2/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_3/.idea/HW_3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_3/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../VUE/HW_3/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JS/Bonus Viktor/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../JS/Bonus Viktor/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vrtest/src/app/Abs/EMenues.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vrtest/src/app/Abs/EMenues.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vrtest/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vrtest/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../VUE/HW_3/hw3/src/assets/logo.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1h0622SrZ4rQv5HbmJ5j3PcOOer" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="ts.external.directory.path" value="E:\JAVA\repository\OWU\TS_Angular\HW_1\vrtest\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JAVA\repository\OWU\TS_Angular\HW_1\vrtest\src\app" />
+      <recent name="E:\JAVA\repository\OWU\TS_Angular\HW_1\src" />
+      <recent name="E:\JAVA\repository\OWU\TS_Angular\HW_1" />
+      <recent name="E:\JAVA\repository\OWU\TS_Angular\HW_1\.idea" />
+      <recent name="E:\JAVA\repository\OWU\TS_Angular\HW_1\src\VerhovnaRada\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="E2E Tests (verhovnarada)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/src/VerhovnaRada/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (vrtest)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/vrtest/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/vrtest/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d723f31c-c420-46cf-859f-bf07daf1af8c" name="Default Changelist" comment="" />
+      <created>1599135451236</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599135451236</updated>
+      <workItem from="1599135454757" duration="10082000" />
+      <workItem from="1599240506426" duration="36840000" />
+      <workItem from="1599557915302" duration="2082000" />
+    </task>
+    <task id="LOCAL-00001" summary="TypeScript HW 1 not complete">
+      <created>1599339415974</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599339415974</updated>
+    </task>
+    <task id="LOCAL-00002" summary="TypeScript HW 1 plus some menu">
+      <created>1599428899132</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599428899132</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/Abs/EMenues.js" />
+        <option value="$PROJECT_DIR$/src/Abs/Human.js" />
+        <option value="$PROJECT_DIR$/src/main.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="TypeScript HW 1 not complete" />
+    <MESSAGE value="TypeScript HW 1 plus some menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="TypeScript HW 1 plus some menu" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="845" y="382" key="#Notifications" timestamp="1599425850281">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="845" y="382" key="#Notifications/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599425850281" />
+    <state x="440" y="94" key="#Project_Structure" timestamp="1599135457841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599135457841" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1599333424531">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599333424531" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599427975927">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599427975927" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1599511588018">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599511588018" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1599511588017">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599511588017" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1599511588017">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599511588017" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1599511588017">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599511588017" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1599428907706">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599428907706" />
+    <state x="342" y="203" key="new project wizard" timestamp="1599586838201">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="203" key="new project wizard/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599586838201" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599167480688">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1599167480688" />
+  </component>
+</project>

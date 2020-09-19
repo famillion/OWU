@@ -8,8 +8,6 @@ import {Observable} from 'rxjs';
 })
 export class UserService {
 
-  users: User[];
-
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<User[]>{
