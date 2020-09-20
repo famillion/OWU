@@ -15,6 +15,7 @@ import { UserCommentsComponent } from './entity/components/users/about-user/user
 import { AllPostsComponent } from './entity/components/posts/all-posts/all-posts.component';
 import { PostComponent } from './entity/components/posts/post/post.component';
 import {UserPostsResolveService} from './entity/services/user-posts-resolve/user-posts-resolve.service';
+import { AboutPostComponent } from './entity/components/posts/about-post/about-post.component';
 // import {UserCommentsResolveService} from './entity/services/user-comments-resolve/user-comments-resolve.service';
 
 
@@ -28,6 +29,7 @@ import {UserPostsResolveService} from './entity/services/user-posts-resolve/user
     UserCommentsComponent,
     AllPostsComponent,
     PostComponent,
+    AboutPostComponent,
 
   ],
   imports: [
@@ -42,7 +44,8 @@ import {UserPostsResolveService} from './entity/services/user-posts-resolve/user
       [
         {path: 'user-posts', component: UserPostsComponent, resolve: {allPosts: UserPostsResolveService}},
       ]},
-      {path: 'posts', component: AllPostsComponent}
+      {path: 'posts', component: AllPostsComponent, resolve: {allPosts: UserPostsResolveService}},
+      {path: 'posts/:id', component: AboutPostComponent, resolve: {allPosts: UserPostsResolveService}}
     ])
   ],
   providers: [],
