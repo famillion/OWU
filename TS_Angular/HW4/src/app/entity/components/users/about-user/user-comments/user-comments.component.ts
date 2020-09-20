@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
 import {PHComment} from '../../../../models/Comment/PHComment';
 import {Post} from '../../../../models/Post/Post';
 import {CommentService} from '../../../../services/comment/comment.service';

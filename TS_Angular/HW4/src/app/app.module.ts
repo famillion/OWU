@@ -15,7 +15,7 @@ import { UserCommentsComponent } from './entity/components/users/about-user/user
 import { AllPostsComponent } from './entity/components/posts/all-posts/all-posts.component';
 import { PostComponent } from './entity/components/posts/post/post.component';
 import {UserPostsResolveService} from './entity/services/user-posts-resolve/user-posts-resolve.service';
-import {UserCommentsResolveService} from './entity/services/user-comments-resolve/user-comments-resolve.service';
+// import {UserCommentsResolveService} from './entity/services/user-comments-resolve/user-comments-resolve.service';
 
 
 @NgModule({
@@ -38,7 +38,7 @@ import {UserCommentsResolveService} from './entity/services/user-comments-resolv
     RouterModule.forRoot([
       {path: '', pathMatch: 'full', redirectTo: 'users'},
       {path: 'users', component: AllUsersComponent, resolve: {users: UsersResolveService}},
-      {path: 'users/:id', component: AboutUserComponent, children:
+      {path: 'users/:id', component: AboutUserComponent, resolve: {users: UsersResolveService}, children:
       [
         {path: 'user-posts', component: UserPostsComponent, resolve: {allPosts: UserPostsResolveService}},
       ]},

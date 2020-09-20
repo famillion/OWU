@@ -1,8 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, Input, OnInit} from '@angular/core';
 import {Post} from '../../../../models/Post/Post';
 import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '../../../../models/user/User';
 import {UserService} from '../../../../services/user/user.service';
+import {AboutUserComponent} from '../about-user.component';
 
 @Component({
   selector: 'app-user-posts',
@@ -15,23 +16,19 @@ export class UserPostsComponent implements OnInit {
   allPosts: Post[];
 
   constructor(private activatedRoute: ActivatedRoute,
-              private route: Router,
-              private userService: UserService) {
+              private singleUser: AboutUserComponent) {
   }
 
   ngOnInit(): void {
-    this.setUser();
-    this.activatedRoute.data.subscribe(value => this.allPosts = value.allPosts);
+    this.activatedRoute.data.subscribe( value => {
+      this.allPosts = value.allPosts;
+      this.user = this.singleUser.user;
+    });
     this.allPosts.map(post => post.isShowComment = false);
   }
 
-  setUser(): void{
-    const arr = this.route.url.split('/');
-    const usrId = +arr[arr.length - 2];
-    this.userService.getUserById(usrId).subscribe(user => this.user = user);
-  }
 
-  getUserPostsOnly(): Post[]{
+  getUserPostsOnly(): Post[] {
     return this.allPosts.filter(post => post.userId === this.user?.id);
   }
 }

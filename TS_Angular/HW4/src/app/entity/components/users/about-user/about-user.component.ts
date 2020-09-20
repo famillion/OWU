@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../../services/user/user.service';
 import {User} from '../../../models/user/User';
-import {Router} from '@angular/router';
+import {ActivatedRoute, ActivatedRouteSnapshot, Router} from '@angular/router';
+import {log} from 'util';
 
 
 @Component({
@@ -14,20 +15,15 @@ export class AboutUserComponent implements OnInit {
   id: number;
   user: User;
 
-
-  constructor(private userService: UserService,
-              private route: Router,
-             ) {
-  }
-
-  getId(): number {
-    const arr = this.route.url.split('/');
-    return +arr[arr.length - 1];
+  constructor(private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.id = this.getId();
-    this.userService.getUserById(this.id).subscribe(user => this.user = user);
+    this.activatedRoute.data.subscribe(value => {
+      const users = value.users;
+      this.activatedRoute.params.subscribe(value1 => this.id = value1.id);
+      this.user = users.filter(user => user.id === +this.id)[0];
+    });
   }
 
 }
