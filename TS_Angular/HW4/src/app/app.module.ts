@@ -16,7 +16,11 @@ import { AllPostsComponent } from './entity/components/posts/all-posts/all-posts
 import { PostComponent } from './entity/components/posts/post/post.component';
 import {UserPostsResolveService} from './entity/services/user-posts-resolve/user-posts-resolve.service';
 import { AboutPostComponent } from './entity/components/posts/about-post/about-post.component';
-// import {UserCommentsResolveService} from './entity/services/user-comments-resolve/user-comments-resolve.service';
+import { AllCommentsComponent } from './entity/components/comments/all-comments/all-comments.component';
+import {UserCommentsResolveService} from './entity/services/user-comments-resolve/user-comments-resolve.service';
+import { SingleCommentComponent } from './entity/components/comments/single-comment/single-comment.component';
+
+
 
 
 @NgModule({
@@ -30,6 +34,8 @@ import { AboutPostComponent } from './entity/components/posts/about-post/about-p
     AllPostsComponent,
     PostComponent,
     AboutPostComponent,
+    AllCommentsComponent,
+    SingleCommentComponent,
 
   ],
   imports: [
@@ -45,8 +51,11 @@ import { AboutPostComponent } from './entity/components/posts/about-post/about-p
         {path: 'user-posts', component: UserPostsComponent, resolve: {allPosts: UserPostsResolveService}},
       ]},
       {path: 'posts', component: AllPostsComponent, resolve: {allPosts: UserPostsResolveService}},
-      {path: 'posts/:id', component: AboutPostComponent, resolve: {allPosts: UserPostsResolveService}}
-    ])
+      {path: 'posts/:id', component: AboutPostComponent, resolve: {allPosts: UserPostsResolveService}},
+      {path: 'all-comments', component: AllCommentsComponent, resolve:
+          {allComments: UserCommentsResolveService}
+      }
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
