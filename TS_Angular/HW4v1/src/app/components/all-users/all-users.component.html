@@ -1,0 +1,7 @@
+<ul class="list-group list-group-flush col-8 offset-2">
+  <li class="list-group-item"
+  *ngFor="let user of users; let i=index"
+  >
+    {{i+1}}. {{user.name}}
+  </li>
+</ul>
