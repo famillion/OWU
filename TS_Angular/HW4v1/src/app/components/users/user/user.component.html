@@ -1,0 +1,37 @@
+<div class="list-group list-group-flush col-8 offset-2 rounded shadow pr-0">
+  <div class="list-group-item">Name: {{user.name}}</div>
+  <div class="list-group-item">Username: {{user.username}}</div>
+  <div class="list-group-item">Email: {{user.email}}</div>
+  <div class="list-group-item">Address:
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Street: {{user.address.street}}</li>
+      <li class="list-group-item">Suite: {{user.address.suite}}</li>
+      <li class="list-group-item">City: {{user.address.city}}</li>
+      <li class="list-group-item">Zipcode: {{user.address.zipcode}}</li>
+      <li class="list-group-item">Geo:
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Lat: {{user.address.geo.lat}}</li>
+          <li class="list-group-item">Lng: {{user.address.geo.lng}}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="list-group-item">Phone: {{user.phone}}</div>
+  <div class="list-group-item">Website: {{user.website}}</div>
+  <div class="list-group-item">Company:
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Name: {{user.company.name}}</li>
+      <li class="list-group-item">catchPhrase: {{user.company.catchPhrase}}</li>
+      <li class="list-group-item">BS: {{user.company.bs}}</li>
+    </ul>
+  </div>
+  <div class="list-group-item d-flex justify-content-between">
+    <button type="button" class="btn btn-secondary w-50"
+            (click)="showUserPosts()"
+    >{{!isPostsShowed ? 'Show Posts' : 'Close Posts'}}</button>
+  </div>
+</div>
+
+<div class="list-group list-group-flush col-8 offset-2 rounded shadow pr-0 mt-2">
+  <router-outlet></router-outlet>
+</div>

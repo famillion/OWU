@@ -6,10 +6,9 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderNavigateComponent } from './components/header-navigate/header-navigate.component';
 import {RouterModule} from '@angular/router';
-import { AllUsersComponent } from './components/all-users/all-users.component';
+import { AllUsersComponent } from './components/users/all-users/all-users.component';
 import {UserResolveService} from './services/user-resolve.service';
 import {HttpClientModule} from '@angular/common/http';
-
 
 
 @NgModule({
@@ -24,8 +23,11 @@ import {HttpClientModule} from '@angular/common/http';
     NgbModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: '', component: AllUsersComponent, resolve: {users: UserResolveService}},
-      {path: 'users', component: AllUsersComponent, resolve: {users: UserResolveService}}
+      {path: '', redirectTo: 'users', pathMatch: 'full'},
+      {path: 'users', component: AllUsersComponent, resolve: {users: UserResolveService}},
+      {path: 'users/:name', loadChildren:
+          () => import('./components/users/user/module/single-user/single-user.module')
+            .then(value => value.SingleUserModule)},
     ])
   ],
   providers: [],

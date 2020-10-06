@@ -1,9 +1,13 @@
+
 export interface User {
   id: number;
   name: string;
   username: string;
   email: string;
   address: UserAddress;
+  phone: string;
+  website: string;
+  company: Company;
 }
 
 interface UserAddress {
@@ -15,4 +19,10 @@ interface UserAddress {
     lat: number;
     lng: number;
   };
+}
+
+interface Company {
+  name: string;
+  catchPhrase: string;
+  bs: string;
 }

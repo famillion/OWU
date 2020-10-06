@@ -1,6 +1,7 @@
 <ul class="list-group list-group-flush col-8 offset-2">
-  <li class="list-group-item"
+  <li class="list-group-item shadow rounded"
   *ngFor="let user of users; let i=index"
+      (click)="showUser(user)"
   >
     {{i+1}}. {{user.name}}
   </li>
