@@ -10,18 +10,23 @@ import {SinglePostComponent} from '../../components/single-post/single-post.comp
 
 
 @NgModule({
-  declarations: [
-    UserComponent,
-    UserPostsComponent,
-    SinglePostComponent,
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild([
-      {path: '', component: UserComponent, resolve: {users: UserResolveService}, children:[
-          {path: 'user-posts', component: UserPostsComponent, resolve: {posts: PostsResolveService}}
-        ]}
-    ])
-  ]
+    declarations: [
+        UserComponent,
+        UserPostsComponent,
+        SinglePostComponent,
+    ],
+    exports: [
+        SinglePostComponent
+    ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild([
+            {
+                path: '', component: UserComponent, resolve: {users: UserResolveService}, children: [
+                    {path: 'user-posts', component: UserPostsComponent, resolve: {posts: PostsResolveService}}
+                ]
+            }
+        ])
+    ]
 })
 export class SingleUserModule { }

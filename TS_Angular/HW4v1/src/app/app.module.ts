@@ -25,10 +25,18 @@ import {HttpClientModule} from '@angular/common/http';
     RouterModule.forRoot([
       {path: '', redirectTo: 'users', pathMatch: 'full'},
       {path: 'users', component: AllUsersComponent, resolve: {users: UserResolveService}},
-      {path: 'users/:name', loadChildren:
+      {
+        path: 'users/:name', loadChildren:
           () => import('./components/users/user/module/single-user/single-user.module')
-            .then(value => value.SingleUserModule)},
-    ])
+            .then(value => value.SingleUserModule)
+      },
+      {
+        path: 'posts', loadChildren: () =>
+          import('./components/posts/module/posts/posts.module')
+            .then(value => value.PostsModule)
+      },
+
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
