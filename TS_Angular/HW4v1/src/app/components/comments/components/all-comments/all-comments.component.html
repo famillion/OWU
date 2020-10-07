@@ -1,0 +1,9 @@
+<div class="list-group-item mt-1 rounded shadow col-8 offset-2" *ngFor="let comment of comments">
+  <h3 class="display-4">{{comment.name}}</h3>
+  <small class="text-muted d-block">email: {{comment.email}} </small>
+  <small class="text-muted">Comment ID: {{comment.id}} | Post ID: {{comment.postId}}</small>
+  <hr class="my-4">
+  <p>
+    {{comment.body}}
+  </p>
+</div>

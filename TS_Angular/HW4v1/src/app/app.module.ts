@@ -35,7 +35,10 @@ import {HttpClientModule} from '@angular/common/http';
           import('./components/posts/module/posts/posts.module')
             .then(value => value.PostsModule)
       },
-
+      {path: 'comments', loadChildren: () =>
+          import('./components/comments/module/comments/comments.module')
+            .then(v => v.CommentsModule)
+      }
     ]),
   ],
   providers: [],
