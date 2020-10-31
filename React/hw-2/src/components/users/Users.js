@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import SingleUser from "./single-user/single-user";
 import {UsersService} from "../../services/users-service";
 

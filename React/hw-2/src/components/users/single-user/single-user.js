@@ -4,7 +4,7 @@ class SingleUser extends Component {
     render() {
         let{name, username, id, email, website} = this.props.user;
         return (
-            <div className="card m-2">
+            <div className="card m-2 bg-transparent">
                 <ul className="list-group list-group-flush rounded shadow">
                     <li className="list-group-item rounded"><span className="lead text-info">Name:</span> <span className="text-monospace font-weight-bold">{name}</span></li>
                     <li className="list-group-item rounded"><span className="lead text-info">Username:</span> <span className="text-monospace font-weight-bold">{username}</span></li>
