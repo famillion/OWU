@@ -17,7 +17,6 @@ class MyRouter extends Component {
         <Route path='/posts' exact component={Posts}/>
         <Route path='/users' exact component={Users}/>
         <Route path='/' exact render={() => <HomePage/>}/>
-
         <Route render={() => <Oops404/>}/>
       </Switch>
     );
