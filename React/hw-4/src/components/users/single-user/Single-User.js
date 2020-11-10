@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {NavLink} from "react-router-dom";
+
 
 class SingleUser extends Component {
   render() {
@@ -34,6 +36,15 @@ class SingleUser extends Component {
           <span className="w-50 font-goldman font-weight-bold">Website: </span>
           <span className="w-50 text-monospace">{website}</span>
         </div>
+        <hr className="my-2"/>
+        <div className="d-flex justify-content-center mt-3 pt-3">
+         <NavLink className="btn btn-secondary shadow"
+          to={`users/${id}`}
+         >
+           More info
+         </NavLink>
+        </div>
+
       </div>
     );
   }
