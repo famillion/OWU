@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 
 import SearchBtn from "./search-btn/SearchBTN";
 
+
 class NavMenu extends Component {
   render() {
     return (
@@ -29,7 +30,7 @@ class NavMenu extends Component {
 
           <SearchBtn/>
         </div>
-
+        
       </nav>
     );
   }

@@ -5,23 +5,25 @@ import SinglePost from "./single-post/single-post";
 class Posts extends Component {
 
   state = {
-    posts: []
+    posts: [],
   };
+
 
   postsAPI = new PostsService();
 
   async componentDidMount() {
     this.setState({
-      posts: await this.postsAPI.getAllPosts().then(value => value)
+      posts: await this.postsAPI.getAllPosts().then(value => value),
     })
   }
+
 
   render() {
 
     return (
       <div>
         {
-          this.state.posts.map(post => <SinglePost post={post} key={post.id}/>)
+          this.state.posts.map(post => <SinglePost post={post} isSingle={this.state.isSingle} key={post.id}/>)
         }
       </div>
     );

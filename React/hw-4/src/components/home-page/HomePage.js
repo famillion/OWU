@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import {UsersConsumer} from "../../services/UsersContextService";
+
 class HomePage extends Component {
   render() {
     return (

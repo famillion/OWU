@@ -8,7 +8,7 @@ export class UsersService {
   }
 
   getUserByID(id){
-    return fetch(this._usersURL + id)
+    return fetch(this._usersURL + '/' + id)
       .then(response => response.json());
   }
 

@@ -12,11 +12,11 @@ class Oops404 extends Component {
   }
 
   render() {
-    console.log(window.location.href.toString());
+
     return (
       <div className="text-field col-8 offset-2">
         <span className="font-goldman d-block" style={{color: 'red'}}>404</span>
-        <small className="text-muted small" style={{fontSize: '14px'}}>Oops! Not found page {this.state.page}</small>
+        <small className="text-muted small" style={{fontSize: '12px'}}>Oops! Not found page {this.state.page}</small>
       </div>
     );
   }
