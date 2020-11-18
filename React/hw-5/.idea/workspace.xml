@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d93251b2-80d6-4754-a9d3-3580ec00e4c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw-5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw-5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/RoutesComponent/RoutesComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Services/ServicesALL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Services/UsersServices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Services/backBTN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/404/oops404.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/App/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/App/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Comments/Comments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Comments/Single-comment/SingleComment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Home/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Nav-menu/NavMenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Nav-menu/NavMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Posts/Full-Single-Post/FullSinglePost.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Posts/Single-post-min/SinglePostMin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Users/Full-User-Info/FullUserInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Users/Single-User-Card/Single-User-Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Users/User-Posts/User-Post-Comments/SingleUserPostWithComments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Users/User-Posts/UserPosts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Users/Users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TS_Angular/HW4v1/HW4v1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TS_Angular/HW6/HW6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TS_Angular/HW8/HW8.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TS_Angular/HW7MyPipe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TS_Angular/HW7MyPipe/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1kKvyTHNuj9xafeubioJppxFLoO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JAVA\repository\OWU\React\hw-5\src\app\components\App" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d93251b2-80d6-4754-a9d3-3580ec00e4c5" name="Default Changelist" comment="" />
+      <created>1605462351372</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605462351372</updated>
+      <workItem from="1605462355636" duration="18297000" />
+      <workItem from="1605553663500" duration="12987000" />
+      <workItem from="1605628188480" duration="601000" />
+      <workItem from="1605694780208" duration="15728000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605475612351">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1605475612351" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1605566344777">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.64.1280.984@0.0.1920.1040" timestamp="1605566344777" />
+  </component>
+</project>
