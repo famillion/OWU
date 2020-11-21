@@ -1,0 +1,19 @@
+.nav-menu {
+    background-color: #8E865D;
+    border-bottom: 1px solid #6E5E0E;
+}
+
+.nav-menu-brand{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-menu-links, .nav-menu-links:hover{
+    text-decoration: none;
+    color: #f7f7f5;
+    padding-left: 10px;
+}
+
+.nav-menu-links.active{
+    color: #f3f3b7;
+}

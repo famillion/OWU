@@ -1,0 +1,21 @@
+.action-field{
+    background-color: #FAECAA;
+    height: 50px;
+}
+
+.bg-body-card{
+    background-color: #FAF4D8;
+}
+
+.price-txt{
+    color: #614F99;
+    font-family: "Bookman Old Style", serif;
+    font-weight: bold;
+    padding: .5rem;
+    text-shadow: #8E865D;
+    line-height: 4vh;
+}
+
+.action-field-item:hover {
+    cursor: pointer;
+}

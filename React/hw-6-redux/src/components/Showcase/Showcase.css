@@ -1,0 +1,17 @@
+.showcase {
+    background-color: rgba(167, 212, 101, 0.74);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.showcase-title {
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #1A0B4C;
+
+}
