@@ -11,7 +11,7 @@ const SingleItem = ({item, addToCart, removeFromCart, addLikeToItem, removeLikeF
   let {name, about, price, src, isLiked, inCart} = item;
 
   return (
-    <div className="card col-xl-3 col-lg-3 col-md-5 col-sm-8 m-2 p-0 rounded shadow"
+    <div className={`card col-xl-3 col-lg-3 col-md-5 col-sm-8 m-2 p-0 rounded shadow ${inCart&&'in-cart'}`}
          style={{minWidth: '16rem', height: '26rem'}}>
       <img src={src} className="card-img-top" style={{height: '12rem'}} alt={name}/>
       <div className="card-body bg-body-card">

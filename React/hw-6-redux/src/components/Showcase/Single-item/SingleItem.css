@@ -19,3 +19,7 @@
 .action-field-item:hover {
     cursor: pointer;
 }
+
+.in-cart{
+    border: 3px solid gold;
+}

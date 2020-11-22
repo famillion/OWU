@@ -6,15 +6,15 @@ import {connect} from 'react-redux';
 import {addToCart, removeFromCart} from "../../store/cart/actions";
 import {addLikeToItem, removeLikeFromItem} from "../../store/likes/actions";
 import Header from "../Header/Header";
-import TistoNavigate from "../../TistoNavigisto/TistoNavigate";
+import WrapperNav from "../WrapperNav/WrapperNav";
 
 function App(props) {
 
   return (
-    <div className="bg showcase col-xl-10 offset-xl-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+    <div className="bg showcase col-xl-10 offset-xl-1 col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
       <Header cartCount={props.cart.length} likeCount={props.likes.length}/>
 
-      <TistoNavigate {...props}/>
+      <WrapperNav {...props}/>
     </div>
   );
 }
