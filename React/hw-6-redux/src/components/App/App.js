@@ -23,7 +23,7 @@ const mapStateToProps = (state) => {
   return {
     cart: state.cartReducer.cart,
     likes: state.likesReducer.likes,
-    items
+    items: state.cartReducer.items
   }
 }
 

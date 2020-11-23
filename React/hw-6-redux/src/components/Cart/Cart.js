@@ -1,8 +1,14 @@
 import React from "react";
 import SingleItem from "../Showcase/Single-item/SingleItem";
+import {useDispatch, useSelector} from "react-redux";
 
 
-const Cart = ({cart, addToCart, removeFromCart, addLikeToItem, removeLikeFromItem}) => {
+const Cart = () => {
+
+  let cart = useSelector(({cartReducer}) => cartReducer.cart);
+  let action = useDispatch();
+
+  console.log(cart);
 
   let sum = cart.reduce((accum, current) => accum + current.price, 0);
 
@@ -18,10 +24,7 @@ const Cart = ({cart, addToCart, removeFromCart, addLikeToItem, removeLikeFromIte
         {
           cart.map(item => (<SingleItem
             item={item}
-            addToCart={addToCart}
-            removeFromCart={removeFromCart}
-            addLikeToItem={addLikeToItem}
-            removeLikeFromItem={removeLikeFromItem}
+            action={action}
             key={item.id}/>))
         }
       </div>

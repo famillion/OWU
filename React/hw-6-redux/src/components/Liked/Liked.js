@@ -1,7 +1,11 @@
 import React from "react";
 import SingleItem from "../Showcase/Single-item/SingleItem";
+import {useDispatch, useSelector} from "react-redux";
 
-const Liked = ({likes, addToCart, removeFromCart, addLikeToItem, removeLikeFromItem}) => {
+const Liked = () => {
+
+  let likes = useSelector(({likesReducer}) => likesReducer.likes);
+  let action = useDispatch();
 
   return (
     <div >
@@ -11,10 +15,7 @@ const Liked = ({likes, addToCart, removeFromCart, addLikeToItem, removeLikeFromI
         {
           likes.map(item => (<SingleItem
             item={item}
-            addToCart={addToCart}
-            removeFromCart={removeFromCart}
-            addLikeToItem={addLikeToItem}
-            removeLikeFromItem={removeLikeFromItem}
+            action={action}
             key={item.id}/>))
         }
       </div>

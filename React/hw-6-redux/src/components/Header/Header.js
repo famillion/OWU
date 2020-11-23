@@ -15,7 +15,7 @@ const Header = (props) => {
   return (
     <header>
       <Navbar className={navMenuClasses} collapseOnSelect expand="sm" variant="dark">
-        <Navbar.Brand onClick={() => props.history.push('/')} className="nav-menu-brand">
+        <Navbar.Brand href="/" className="nav-menu-brand">
           <img
             src={logo}
             width="30"
