@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+            <img src="/img/logo.png" width="30px" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<section class="jumbotron col-10 offset-1 rounded shadow mt-3 text-center p-5">
+    <div class="p-5 col-6 offset-3 rounded shadow-lg">
+        <form action="/register/newuser" method="post">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email">
+                {{#if noMail}}<span class="text-danger">Enter correct email</span>{{/if}}
+            </div>
+            <div class="form-group">
+                <label for="pass">Password</label>
+                <input type="password" name="password" id="pass" class="form-control" placeholder="Enter your password">
+                {{#if noPass}}<span class="text-danger">Enter password</span>{{/if}}
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="userName" id="username" class="form-control" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" name="country" id="country" class="form-control" placeholder="Enter your country">
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" class="form-control" placeholder="Enter your city">
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" name="streetAddress" id="address" class="form-control" placeholder="Enter your address">
+            </div>
+            <div class="form-group">
+                <label for="about">About</label>
+                <textarea name="about" id="about" class="form-control" placeholder="Some about you..."></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit"  class="btn btn-secondary w-25 shadow-lg mt-4">Register</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
