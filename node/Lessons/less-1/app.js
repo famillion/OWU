@@ -7,6 +7,8 @@ let femaleUsersDirName = 'female-users';
 //++++++++ Create users in ./dir/users/all-users
 createUsersInDir(allUsersDirName, 20, __dirname);
 
+// 10 sec later
+
 //+++++++++ Move users to folders by gender
 setTimeout(() => {
   moveUserFileByGender(allUsersDirName, maleUsersDirName, femaleUsersDirName, __dirname);
