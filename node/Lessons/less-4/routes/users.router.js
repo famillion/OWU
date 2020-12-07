@@ -14,11 +14,17 @@ usersRouter.get('/filter-by-age', userMiddleware.ageFilterCheck, usersController
 
 usersRouter.get('/:id', userMiddleware.checkUserById, usersController.findUserByID);
 
-usersRouter.post('/', userMiddleware.checkUserFields, userMiddleware.checkUserEmail,
-  usersController.createUser);
+usersRouter.post('/',
+  userMiddleware.checkUserFields,
+  userMiddleware.checkUserEmail,
+  usersController.createUser
+);
 
-usersRouter.put('/', userMiddleware.checkUserFields, userMiddleware.checkUserEmail,
-  usersController.updateUser);
+usersRouter.put('/',
+  userMiddleware.checkUserFields,
+  userMiddleware.checkUserEmail,
+  usersController.updateUser
+);
 
 usersRouter.delete('/:id', userMiddleware.checkUserById, usersController.deleteUser);
 
