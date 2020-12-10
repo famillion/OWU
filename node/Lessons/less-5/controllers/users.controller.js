@@ -3,7 +3,8 @@ const { usersServices } = require('../services');
 const { errorCodes: { CREATED, DELETED } } = require('../error');
 
 const {
-  createUser, deleteUserByID, getAllUsers, getUserByEmail, getUserByID, updateUser, filterUsersByAge
+  createUser, deleteUserByID, getAllUsers, getUserByEmail, getUserByID, updateUser,
+  filterUsersByAge, getUserWithCarsByUserID, getAllUsersWithCars
 } = usersServices;
 
 module.exports = {
@@ -74,6 +75,26 @@ module.exports = {
       const users = await filterUsersByAge(age, isOver);
 
       res.json(users);
+    } catch (e) {
+      next(e);
+    }
+  },
+
+  fundUserCarsByID: async (req, res, next) => {
+    try {
+      const userCars = await getUserWithCarsByUserID(req.user_id);
+
+      res.json(userCars);
+    } catch (e) {
+      next(e);
+    }
+  },
+
+  fundAllUsersWithCars: async (req, res, next) => {
+    try {
+      const usersWithCars = await getAllUsersWithCars();
+
+      res.json(usersWithCars);
     } catch (e) {
       next(e);
     }

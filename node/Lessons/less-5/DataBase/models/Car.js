@@ -33,5 +33,8 @@ module.exports = (client, DataTypes) => {
 
   const User = (require('./User'))(client, DataTypes);
 
-  Car.belongsTo(User, { foreignKey: Car.user_id });
+  Car.hasOne(User);
+  Car.belongsTo(User, { foreignKey: 'user_id' });
+
+  return Car;
 };

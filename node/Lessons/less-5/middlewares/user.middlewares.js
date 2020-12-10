@@ -2,7 +2,7 @@ const { middlewaresService } = require('../services');
 
 const { USER, getModel } = require('../DataBase/constants/constModels');
 
-const { ErrorHandler, errorCodes: { NOT_FOUND, UNAUTHORIZED } } = require('../error');
+const { ErrorHandler, errorCodes: { NOT_FOUND, UNAUTHORIZED, BAD_REQUEST } } = require('../error');
 
 module.exports = {
   ageFilterCheck: (req, res, next) => {
@@ -60,6 +60,18 @@ module.exports = {
       });
 
       if (user) throw new ErrorHandler(`${UNAUTHORIZED.message}! email is already in use`, UNAUTHORIZED.code);
+
+      next();
+    } catch (e) {
+      next(e);
+    }
+  },
+
+  queryIdCheck: (req, res, next) => {
+    try {
+      if (!req.query.user_id) throw new ErrorHandler(`${BAD_REQUEST.message}! user id not found`, BAD_REQUEST.code);
+
+      req.user_id = +req.query.user_id;
 
       next();
     } catch (e) {

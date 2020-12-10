@@ -1,6 +1,6 @@
 const { Op } = require('sequelize');
 
-const { USER, getModel } = require('../DataBase/constants/constModels');
+const { USER, CAR, getModel } = require('../DataBase/constants/constModels');
 
 module.exports = {
   createUser: (user) => getModel(USER).create({ ...user }),
@@ -52,5 +52,20 @@ module.exports = {
         }
       }
     });
-  }
+  },
+
+  getUserWithCarsByUserID: (userID) => getModel(CAR).findAll({
+    include: {
+      model: getModel(USER),
+      where: {
+        id: userID
+      }
+    }
+  }),
+
+  getAllUsersWithCars: () => getModel(CAR).findAll({
+    include: {
+      model: getModel(USER)
+    }
+  })
 };
