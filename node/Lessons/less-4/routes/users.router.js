@@ -17,14 +17,12 @@ usersRouter.get('/:id', userMiddleware.checkUserById, usersController.findUserBy
 usersRouter.post('/',
   userMiddleware.checkUserFields,
   userMiddleware.checkUserEmail,
-  usersController.createUser
-);
+  usersController.createUser);
 
 usersRouter.put('/',
   userMiddleware.checkUserFields,
   userMiddleware.checkUserEmail,
-  usersController.updateUser
-);
+  usersController.updateUser);
 
 usersRouter.delete('/:id', userMiddleware.checkUserById, usersController.deleteUser);
 

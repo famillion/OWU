@@ -44,11 +44,12 @@ module.exports = {
     try {
       const password = await userPassHelper.hash(req.body.password);
 
+      const { name, age, email } = req.body;
       const user = { ...req.body, password };
 
       await createUser(user);
 
-      res.status(CREATED.code).json(user);
+      res.status(CREATED.code).json({ name, age, email });
     } catch (e) {
       next(e);
     }
@@ -58,11 +59,12 @@ module.exports = {
     try {
       const password = await userPassHelper.hash(req.body.password);
 
+      const { name, age, email } = req.body;
       const user = { ...req.body, password };
 
       await updateUser(user);
 
-      res.status(CREATED.code).json(user);
+      res.status(CREATED.code).json({ name, age, email });
     } catch (e) {
       next(e);
     }
