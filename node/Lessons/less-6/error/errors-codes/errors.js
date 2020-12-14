@@ -22,5 +22,9 @@ module.exports = {
   DELETED: {
     message: 'Deleted',
     code: 410
+  },
+  WRONG_EMAIL_OR_PASSWORD: {
+    message: 'Wrong email or password',
+    code: 400
   }
 };

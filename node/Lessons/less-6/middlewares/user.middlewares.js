@@ -55,7 +55,7 @@ module.exports = {
 
   checkUserEmail: async (req, res, next) => {
     try {
-      const user = await getModel(USER).findAll({
+      const [user] = await getModel(USER).findAll({
         where: {
           email: req.body.email
         }

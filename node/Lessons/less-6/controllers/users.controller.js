@@ -2,6 +2,8 @@ const { usersServices } = require('../services');
 
 const { errorCodes: { CREATED, DELETED } } = require('../error');
 
+const { userPassHelper } = require('../helpers');
+
 const {
   createUser, deleteUserByID, getAllUsers, getUserByEmail, getUserByID, updateUser,
   filterUsersByAge, getUserWithCarsByUserID, getAllUsersWithCars
@@ -40,9 +42,13 @@ module.exports = {
 
   createUser: async (req, res, next) => {
     try {
-      await createUser(req.body);
+      const password = await userPassHelper.hash(req.body.password);
 
-      res.status(201).json(req.body);
+      const user = { ...req.body, password };
+
+      await createUser(user);
+
+      res.status(CREATED.code).json(user);
     } catch (e) {
       next(e);
     }
@@ -50,9 +56,13 @@ module.exports = {
 
   updateUser: async (req, res, next) => {
     try {
-      await updateUser(req.body);
+      const password = await userPassHelper.hash(req.body.password);
 
-      res.status(CREATED.code).json(req.body);
+      const user = { ...req.body, password };
+
+      await updateUser(user);
+
+      res.status(CREATED.code).json(user);
     } catch (e) {
       next(e);
     }

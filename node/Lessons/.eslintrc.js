@@ -111,6 +111,7 @@ module.exports = {
     'no-useless-call': 'error',
     'no-useless-concat': 'error',
     'no-useless-return': 'error',
+    'no-useless-escape': 'off',
     'no-var': 'error',
     'no-void': 'error',
     'object-shorthand': 'error',
