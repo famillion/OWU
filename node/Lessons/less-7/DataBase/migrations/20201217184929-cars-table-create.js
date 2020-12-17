@@ -1,34 +1,6 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable(
-      'users',
-      {
-        id: {
-          type: Sequelize.DataTypes.INTEGER,
-          primaryKey: true,
-          autoIncrement: true
-        },
-        name: {
-          type: Sequelize.DataTypes.STRING,
-          allowNull: false
-        },
-        email: {
-          type: Sequelize.DataTypes.STRING,
-          allowNull: false,
-          unique: true
-        },
-        password: {
-          type: Sequelize.DataTypes.STRING,
-          allowNull: false,
-        },
-        age: {
-          type: Sequelize.DataTypes.INTEGER,
-          allowNull: false
-        }
-      }
-    );
-
-    await queryInterface.createTable(
       'cars',
       {
         id: {
@@ -52,13 +24,10 @@ module.exports = {
           type: Sequelize.DataTypes.INTEGER,
           allowNull: false,
           foreignKey: true,
-          onUpdate: 'cascade',
           onDelete: 'cascade',
+          onUpdate: 'cascade',
           references: {
-            model: {
-              tableName: 'users',
-              schema: 'smart_garage'
-            },
+            model: 'users',
             key: 'id'
           }
         }
@@ -68,6 +37,6 @@ module.exports = {
 
   // eslint-disable-next-line no-unused-vars
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropAllTables();
+    await queryInterface.dropTable('cars', { cascade: true });
   }
 };

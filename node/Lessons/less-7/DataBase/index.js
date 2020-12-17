@@ -3,6 +3,11 @@ const fse = require('fs-extra');
 const path = require('path');
 
 const { Sequelize, DataTypes } = require('sequelize');
+const {
+  config: {
+    DB_NAME, DB_PASSWORD, DB_USERNAME, HOST
+  }
+} = require('../configs');
 
 module.exports = (() => {
   let instance;
@@ -10,10 +15,13 @@ module.exports = (() => {
   const initInstance = () => {
     const models = {};
 
-    const client = new Sequelize('smart_garage', 'admin', 'metal666', {
-      host: 'localhost',
-      dialect: 'mysql'
-    });
+    const client = new Sequelize(DB_NAME,
+      DB_USERNAME,
+      DB_PASSWORD,
+      {
+        host: HOST,
+        dialect: 'mysql'
+      });
 
     const getModels = () => {
       const modelsPath = path.join(process.cwd(), 'DataBase', 'models');

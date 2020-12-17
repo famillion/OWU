@@ -2,24 +2,20 @@ const { Router } = require('express');
 
 const { usersController } = require('../../controllers');
 
-const { userMiddleware, authMiddleware } = require('../../middlewares');
+const { userMiddleware } = require('../../middlewares');
 
 const usersRouter = Router();
 
 usersRouter.get('/', usersController.getUsers);
 
-usersRouter.get('/filter', userMiddleware.checkUserInBase, usersController.findUserByEmail);
+usersRouter.get(
+  '/filter',
+  usersController.findUserByEmail
+);
 
 usersRouter.get('/user-cars', usersController.fundUserCarsByID);
 
 usersRouter.get('/usersCars', usersController.fundAllUsersWithCars);
-
-usersRouter.post(
-  '/auth',
-  userMiddleware.userAuthValidator,
-  authMiddleware.userEmailAndPassCheck,
-  usersController.userLogin
-);
 
 usersRouter.get(
   '/filter-by-age',

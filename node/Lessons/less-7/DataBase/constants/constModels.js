@@ -4,4 +4,5 @@ module.exports = {
   getModel: (modelName) => db.getModel(modelName),
   USER: 'User',
   CAR: 'Car',
+  AUTH: 'Auth'
 };

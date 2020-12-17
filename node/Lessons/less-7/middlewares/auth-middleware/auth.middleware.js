@@ -1,7 +1,6 @@
+const { authValidator } = require('../../validators');
 const { usersServices: { getUserByEmail } } = require('../../services');
-
 const { ErrorHandler, errorCodes: { WRONG_EMAIL_OR_PASSWORD } } = require('../../error');
-
 const { userPassHelper: { compare } } = require('../../helpers');
 
 module.exports = {
@@ -20,5 +19,17 @@ module.exports = {
       next(e);
     }
   },
+
+  userAuthValidator: (req, res, next) => {
+    try {
+      const { error } = authValidator.validate(req.body);
+
+      if (error) throw new ErrorHandler(error.details[0].message, WRONG_EMAIL_OR_PASSWORD.code);
+
+      next();
+    } catch (e) {
+      next(e);
+    }
+  }
 
 };

@@ -4,11 +4,13 @@ const { usersServices: { getUserByEmail, getUserByID } } = require('../../servic
 
 const {
   ErrorHandler, errorCodes: {
-    NOT_FOUND, UNAUTHORIZED, BAD_REQUEST, WRONG_EMAIL_OR_PASSWORD
+    NOT_FOUND,
+    UNAUTHORIZED,
+    BAD_REQUEST
   }
 } = require('../../error');
 
-const { userValidator, userUpdateValidator, authValidator } = require('../../validators');
+const { userValidator, userUpdateValidator } = require('../../validators');
 
 module.exports = {
   ageFilterCheck: (req, res, next) => {
@@ -94,18 +96,6 @@ module.exports = {
       const { error } = userUpdateValidator.validate(req.body);
 
       if (error) throw new ErrorHandler(error.details[0].message, BAD_REQUEST.code);
-
-      next();
-    } catch (e) {
-      next(e);
-    }
-  },
-
-  userAuthValidator: (req, res, next) => {
-    try {
-      const { error } = authValidator.validate(req.body);
-
-      if (error) throw new ErrorHandler(error.details[0].message, WRONG_EMAIL_OR_PASSWORD.code);
 
       next();
     } catch (e) {

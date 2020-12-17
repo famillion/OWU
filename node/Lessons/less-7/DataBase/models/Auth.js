@@ -1,23 +1,21 @@
 module.exports = (client, DataTypes) => {
-  const Car = client.define(
-    'Car',
+  const Auth = client.define(
+    'Auth',
     {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
       },
-      price: {
-        type: DataTypes.INTEGER,
-        allowNull: true
-      },
-      model: {
+      access_token: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        unique: true
       },
-      year: {
-        type: DataTypes.INTEGER,
-        allowNull: true
+      refresh_token: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        unique: true
       },
       user_id: {
         type: DataTypes.INTEGER,
@@ -32,13 +30,17 @@ module.exports = (client, DataTypes) => {
           },
           key: 'id'
         }
+      },
+      createAt: {
+        type: DataTypes.DATE,
+        default: client.fn('NOW')
       }
     },
     {
-      tableName: 'cars',
+      tableName: 'auth',
       timestamps: false
     }
   );
 
-  return Car;
+  return Auth;
 };

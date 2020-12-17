@@ -32,7 +32,7 @@ module.exports = {
 
   findUserByID: async (req, res, next) => {
     try {
-      const user = await getUserByID(req.params.email);
+      const user = await getUserByID(req.params.id);
 
       res.json(user);
     } catch (e) {
@@ -111,14 +111,6 @@ module.exports = {
       const usersWithCars = await getAllUsersWithCars();
 
       res.json(usersWithCars);
-    } catch (e) {
-      next(e);
-    }
-  },
-
-  userLogin: (req, res, next) => {
-    try {
-
     } catch (e) {
       next(e);
     }
