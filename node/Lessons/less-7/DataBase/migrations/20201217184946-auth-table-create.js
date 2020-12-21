@@ -31,7 +31,7 @@ module.exports = {
         },
         createdAt: {
           type: Sequelize.DataTypes.DATE,
-          defaultValue: new Date()
+          defaultValue: Sequelize.fn('NOW')
         }
       }
     );

@@ -1,46 +1,42 @@
-module.exports = (client, DataTypes) => {
-  const Auth = client.define(
-    'Auth',
-    {
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-      },
-      access_token: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        unique: true
-      },
-      refresh_token: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        unique: true
-      },
-      user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        foreignKey: true,
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-        reference: {
-          model: {
-            tableName: 'users',
-            schema: 'smart_garage'
-          },
-          key: 'id'
-        }
-      },
-      createAt: {
-        type: DataTypes.DATE,
-        default: client.fn('NOW')
+module.exports = (client, DataTypes) => client.define(
+  'Auth',
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    access_token: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true
+    },
+    refresh_token: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      foreignKey: true,
+      onDelete: 'cascade',
+      onUpdate: 'cascade',
+      reference: {
+        model: {
+          tableName: 'users',
+          schema: 'smart_garage'
+        },
+        key: 'id'
       }
     },
-    {
-      tableName: 'auth',
-      timestamps: false
+    createAt: {
+      type: DataTypes.DATE,
+      default: client.fn('NOW')
     }
-  );
-
-  return Auth;
-};
+  },
+  {
+    tableName: 'auth',
+    timestamps: false
+  }
+);

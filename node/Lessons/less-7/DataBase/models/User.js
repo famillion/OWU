@@ -31,5 +31,14 @@ module.exports = (client, DataTypes) => {
     }
   );
 
+  const Auth = require('./Auth')(client, DataTypes);
+  const Car = require('./Car')(client, DataTypes);
+
+  User.hasMany(Car, { onDelete: 'CASCADE', foreignKey: 'user_id' });
+  Car.belongsTo(User);
+
+  User.hasMany(Auth, { onDelete: 'CASCADE', foreignKey: 'user_id' });
+  Auth.belongsTo(User);
+
   return User;
 };

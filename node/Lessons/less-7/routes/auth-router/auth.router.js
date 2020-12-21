@@ -7,8 +7,8 @@ const authRouter = Router();
 
 authRouter.post(
   '/',
-  authMiddleware.userAuthValidator,
   authMiddleware.userEmailAndPassCheck,
+  authMiddleware.userAuthValidator,
   authController.createUserTokenPair
 );
 

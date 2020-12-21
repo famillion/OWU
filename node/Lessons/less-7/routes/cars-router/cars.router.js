@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 const { carsController } = require('../../controllers');
 
-const { carMiddleware } = require('../../middlewares');
+const { authMiddleware, carMiddleware } = require('../../middlewares');
 
 const carsRouter = Router();
 
@@ -31,11 +31,18 @@ carsRouter.post(
 
 carsRouter.put(
   '/',
+  authMiddleware.checkAccessToken,
   carMiddleware.fieldsCheck,
   carMiddleware.updateCarValidator,
   carsController.updateCar
 );
 
-carsRouter.delete('/:id', carMiddleware.checkCarById, carsController.deleteCar);
+carsRouter.delete(
+  '/:id',
+  authMiddleware.checkAccessToken,
+  authMiddleware.checkUserForbid,
+  carMiddleware.checkCarById,
+  carsController.deleteCar
+);
 
 module.exports = carsRouter;

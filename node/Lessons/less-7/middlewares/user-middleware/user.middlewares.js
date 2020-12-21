@@ -5,7 +5,6 @@ const { usersServices: { getUserByEmail, getUserByID } } = require('../../servic
 const {
   ErrorHandler, errorCodes: {
     NOT_FOUND,
-    UNAUTHORIZED,
     BAD_REQUEST
   }
 } = require('../../error');
@@ -59,7 +58,7 @@ module.exports = {
     try {
       const user = await getUserByEmail(req.body.email);
 
-      if (user) throw new ErrorHandler(`${UNAUTHORIZED.message}! email is already in use`, UNAUTHORIZED.code);
+      if (user) throw new ErrorHandler(`${BAD_REQUEST.message}! email is already in use`, BAD_REQUEST.code);
 
       next();
     } catch (e) {

@@ -20,7 +20,7 @@ app.use('/users', usersRouter);
 // eslint-disable-next-line no-unused-vars
 app.use('*', (err, req, res, next) => {
   res
-    .status(err.code)
+    .status(err.code || 500)
     .json(err.message);
 });
 

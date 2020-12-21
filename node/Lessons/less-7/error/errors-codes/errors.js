@@ -1,30 +1,46 @@
+const {
+  BAD_REQUEST, CREATED, DELETED, FORBIDDEN, NOT_FOUND, UNAUTHORIZED
+} = require('./error-codes');
+
 module.exports = {
-  CREATED: {
-    message: 'Created',
-    code: 201
+  USER_CREATED: {
+    message: 'User created',
+    code: CREATED
   },
   BAD_REQUEST: {
     message: 'Bed request',
-    code: 400
+    code: BAD_REQUEST
   },
-  UNAUTHORIZED: {
-    message: 'Unauthorized access',
-    code: 401
+  NOT_VALID_TOKEN: {
+    message: 'Unauthorized. Not valid token',
+    code: UNAUTHORIZED
   },
   FORBIDDEN: {
     message: 'Forbidden. The request was correct, but the server refuses to respond.',
-    code: 403
+    code: FORBIDDEN
   },
   NOT_FOUND: {
     message: 'Resource not found',
-    code: 404
+    code: NOT_FOUND
   },
-  DELETED: {
-    message: 'Deleted',
-    code: 410
+  NOT_FOUND_TOKEN: {
+    message: 'Token not found',
+    code: NOT_FOUND
+  },
+  USER_DELETED: {
+    message: 'User Deleted',
+    code: DELETED
+  },
+  CAR_DELETED: {
+    message: 'Car Deleted',
+    code: DELETED
   },
   WRONG_EMAIL_OR_PASSWORD: {
     message: 'Wrong email or password',
-    code: 400
+    code: BAD_REQUEST
+  },
+  PERMISSION_DENIED: {
+    message: 'Permission denied',
+    code: FORBIDDEN
   }
 };
