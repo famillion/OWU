@@ -1,14 +1,16 @@
 const express = require('express');
+const fileUpload = require('express-fileupload');
 
 require('dotenv').config();
 
-const app = express();
+const { authRouter, carsRouter, usersRouter } = require('./routes');
 
+const app = express();
 const db = require('./DataBase').getInstance();
 
 db.initModels();
 
-const { authRouter, carsRouter, usersRouter } = require('./routes');
+app.use(fileUpload());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -1,6 +1,6 @@
 const { carsServices } = require('../../services');
 
-const { errorCodes: { CREATED, DELETED } } = require('../../error');
+const { errorCodes: { CAR_DELETED, CAR_CREATED } } = require('../../error');
 
 const {
   createCar, deleteCar, getAllCars, getCarByID, getCarsByModel, getCarsByUserID, updateCar
@@ -51,7 +51,7 @@ module.exports = {
     try {
       await createCar(req.body);
 
-      res.status(CREATED.code).json(req.body);
+      res.status(CAR_CREATED.code).json(req.body);
     } catch (e) {
       next(e);
     }
@@ -71,7 +71,7 @@ module.exports = {
     try {
       await deleteCar(req.car.id);
 
-      res.status(DELETED.code).json(req.car);
+      res.status(CAR_DELETED.code).json(req.car);
     } catch (e) {
       next(e);
     }

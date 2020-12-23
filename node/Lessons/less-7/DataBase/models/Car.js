@@ -8,15 +8,21 @@ module.exports = (client, DataTypes) => client.define(
     },
     price: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
     },
     model: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     year: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
+    },
+    photos: {
+      type: DataTypes.STRING
+    },
+    docs: {
+      type: DataTypes.STRING
     },
     user_id: {
       type: DataTypes.INTEGER,

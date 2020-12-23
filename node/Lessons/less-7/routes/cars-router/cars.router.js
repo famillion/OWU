@@ -40,7 +40,7 @@ carsRouter.put(
 carsRouter.delete(
   '/:id',
   authMiddleware.checkAccessToken,
-  authMiddleware.checkUserForbid,
+  authMiddleware.checkUserForbidByParams,
   carMiddleware.checkCarById,
   carsController.deleteCar
 );

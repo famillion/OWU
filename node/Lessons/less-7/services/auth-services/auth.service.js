@@ -9,11 +9,15 @@ module.exports = {
     include: [
       {
         model: getModel(AUTH),
-        where: findObj,
+        where: findObj
       },
       {
         model: getModel(CAR)
       }
     ]
+  }),
+
+  deleteToken: (token) => getModel(AUTH).destroy({
+    where: token
   })
 };

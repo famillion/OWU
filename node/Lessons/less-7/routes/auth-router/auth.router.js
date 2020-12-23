@@ -12,4 +12,11 @@ authRouter.post(
   authController.createUserTokenPair
 );
 
+authRouter.get('/logout',
+  authController.logout);
+
+authRouter.post('/refresh',
+  authMiddleware.checkRefreshToken,
+  authController.refreshToken);
+
 module.exports = authRouter;

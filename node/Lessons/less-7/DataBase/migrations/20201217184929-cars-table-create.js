@@ -20,6 +20,12 @@ module.exports = {
           type: Sequelize.DataTypes.INTEGER,
           allowNull: false
         },
+        photos: {
+          type: Sequelize.DataTypes.STRING
+        },
+        docs: {
+          type: Sequelize.DataTypes.STRING
+        },
         user_id: {
           type: Sequelize.DataTypes.INTEGER,
           allowNull: false,

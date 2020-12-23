@@ -13,7 +13,7 @@ const {
 const { usersServices: { getUserByEmail } } = require('../../services');
 const { userPassHelper: { compare } } = require('../../helpers');
 const { constants: { AUTHORIZATION } } = require('../../configs');
-const { config: { ACCESS_TOKEN_WORD } } = require('../../configs');
+const { config: { ACCESS_TOKEN_WORD, REFRESH_TOKEN_WORD } } = require('../../configs');
 
 module.exports = {
   userEmailAndPassCheck: async (req, res, next) => {
@@ -56,18 +56,41 @@ module.exports = {
         if (err) throw new ErrorHandler(NOT_VALID_TOKEN.message, NOT_VALID_TOKEN.code);
       });
 
-      const userWithToken = await authService.getUserWithTokenByParams({ access_token });
+      const userAndCarWithToken = await authService.getUserWithTokenByParams({ access_token });
 
-      if (!userWithToken) throw new ErrorHandler(NOT_VALID_TOKEN.message, NOT_VALID_TOKEN.code);
+      if (!userAndCarWithToken) throw new ErrorHandler(NOT_VALID_TOKEN.message, NOT_VALID_TOKEN.code);
 
-      req.user = userWithToken;
+      req.user = userAndCarWithToken;
+
       next();
     } catch (e) {
       next(e);
     }
   },
 
-  checkUserForbid: (req, res, next) => {
+  checkRefreshToken: async (req, res, next) => {
+    try {
+      const refresh_token = req.get(AUTHORIZATION);
+
+      if (!refresh_token) throw new ErrorHandler(NOT_FOUND_TOKEN.message, NOT_FOUND_TOKEN.code);
+
+      jwt.verify(refresh_token, REFRESH_TOKEN_WORD, (err) => {
+        if (err) throw new ErrorHandler(NOT_VALID_TOKEN.message, NOT_VALID_TOKEN.code);
+      });
+
+      const userAndCarWithToken = await authService.getUserWithTokenByParams({ refresh_token });
+
+      if (!userAndCarWithToken) throw new ErrorHandler(NOT_VALID_TOKEN.message, NOT_VALID_TOKEN.code);
+
+      req.user = userAndCarWithToken;
+
+      next();
+    } catch (e) {
+      next(e);
+    }
+  },
+
+  checkUserForbidByParams: (req, res, next) => {
     try {
       if (req.user.id !== req.params.id) throw new ErrorHandler(PERMISSION_DENIED.message, PERMISSION_DENIED.code);
 

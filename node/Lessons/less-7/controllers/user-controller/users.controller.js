@@ -1,6 +1,6 @@
 const { usersServices } = require('../../services');
 
-const { errorCodes: { CREATED, DELETED } } = require('../../error');
+const { errorCodes: { USER_CREATED, USER_DELETED, USER_UPDATE } } = require('../../error');
 
 const { userPassHelper } = require('../../helpers');
 
@@ -49,7 +49,7 @@ module.exports = {
 
       await createUser(user);
 
-      res.status(CREATED.code).json({ name, age, email });
+      res.status(USER_CREATED.code).json({ name, age, email });
     } catch (e) {
       next(e);
     }
@@ -68,7 +68,7 @@ module.exports = {
 
       await updateUser(user);
 
-      res.status(CREATED.code).json({ name, age, email });
+      res.status(USER_UPDATE.code).json({ name, age, email });
     } catch (e) {
       next(e);
     }
@@ -78,7 +78,7 @@ module.exports = {
     try {
       await deleteUserByID(req.user.id);
 
-      res.status(DELETED.code).json(req.user);
+      res.status(USER_DELETED.code).json(req.user);
     } catch (e) {
       next(e);
     }
@@ -98,7 +98,7 @@ module.exports = {
 
   fundUserCarsByID: async (req, res, next) => {
     try {
-      const userCars = await getUserWithCarsByUserID(req.user_id);
+      const userCars = await getUserWithCarsByUserID(req.query.user_id);
 
       res.json(userCars);
     } catch (e) {

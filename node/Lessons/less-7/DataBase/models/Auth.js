@@ -30,7 +30,7 @@ module.exports = (client, DataTypes) => client.define(
         key: 'id'
       }
     },
-    createAt: {
+    createdAt: {
       type: DataTypes.DATE,
       default: client.fn('NOW')
     }

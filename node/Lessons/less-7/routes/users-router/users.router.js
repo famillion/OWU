@@ -1,8 +1,6 @@
 const { Router } = require('express');
-
-const { usersController } = require('../../controllers');
-
-const { authMiddleware, userMiddleware } = require('../../middlewares');
+const { usersController, filesController } = require('../../controllers');
+const { authMiddleware, userMiddleware, filesMiddleware } = require('../../middlewares');
 
 const usersRouter = Router();
 
@@ -15,7 +13,7 @@ usersRouter.get(
 
 usersRouter.get('/user-cars', usersController.fundUserCarsByID);
 
-usersRouter.get('/usersCars', usersController.fundAllUsersWithCars);
+usersRouter.get('/users-with-cars', usersController.fundAllUsersWithCars);
 
 usersRouter.get(
   '/filter-by-age',
@@ -24,6 +22,15 @@ usersRouter.get(
 );
 
 usersRouter.get('/:id', userMiddleware.checkUserById, usersController.findUserByID);
+
+usersRouter.post('/upload/:id',
+  userMiddleware.checkUserById,
+  authMiddleware.checkAccessToken,
+  authMiddleware.checkUserForbidByParams,
+  filesMiddleware.checkUploadFiles,
+  filesMiddleware.checkMaxLimitUploadFiles,
+  filesMiddleware.checkIsAvatar,
+  filesController.fileUpload);
 
 usersRouter.post(
   '/',
@@ -42,7 +49,7 @@ usersRouter.put(
 usersRouter.delete(
   '/:id',
   authMiddleware.checkAccessToken,
-  authMiddleware.checkUserForbid,
+  authMiddleware.checkUserForbidByParams,
   userMiddleware.checkUserById,
   usersController.deleteUser
 );

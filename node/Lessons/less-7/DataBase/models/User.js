@@ -23,6 +23,12 @@ module.exports = (client, DataTypes) => {
       password: {
         type: DataTypes.STRING,
         allowNull: false
+      },
+      photos: {
+        type: DataTypes.STRING
+      },
+      docs: {
+        type: DataTypes.STRING
       }
     },
     {
@@ -34,11 +40,11 @@ module.exports = (client, DataTypes) => {
   const Auth = require('./Auth')(client, DataTypes);
   const Car = require('./Car')(client, DataTypes);
 
-  User.hasMany(Car, { onDelete: 'CASCADE', foreignKey: 'user_id' });
   Car.belongsTo(User);
-
-  User.hasMany(Auth, { onDelete: 'CASCADE', foreignKey: 'user_id' });
   Auth.belongsTo(User);
+
+  User.hasMany(Car, { onDelete: 'CASCADE', foreignKey: 'user_id' });
+  User.hasMany(Auth, { onDelete: 'CASCADE', foreignKey: 'user_id' });
 
   return User;
 };
