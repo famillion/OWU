@@ -1,29 +1,33 @@
 module.exports = (client, DataTypes) => client.define(
-  'Car',
+  'UserFile',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    price: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    model: {
+    fileName: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    year: {
-      type: DataTypes.INTEGER,
+    extension: {
+      type: DataTypes.STRING,
       allowNull: false
+    },
+    fileType: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    path: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
       foreignKey: true,
-      onDelete: 'cascade',
       onUpdate: 'cascade',
+      onDelete: 'cascade',
       reference: {
         model: {
           tableName: 'users',
@@ -34,7 +38,7 @@ module.exports = (client, DataTypes) => client.define(
     }
   },
   {
-    tableName: 'cars',
+    tableName: 'files',
     timestamps: false
   }
 );

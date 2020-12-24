@@ -24,12 +24,6 @@ module.exports = {
         age: {
           type: Sequelize.DataTypes.INTEGER,
           allowNull: false
-        },
-        photos: {
-          type: Sequelize.DataTypes.STRING
-        },
-        docs: {
-          type: Sequelize.DataTypes.STRING
         }
       }
     );

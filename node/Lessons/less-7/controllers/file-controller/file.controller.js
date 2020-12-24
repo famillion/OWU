@@ -24,20 +24,23 @@ module.exports = {
       let photosDir;
       let docsDir;
 
+      const USER_FILES_DIR = path.join(process.cwd(), 'public', 'users', `user-${id}`);
+      const CAR_FILES_DIR = path.join(process.cwd(), USER_FILES_DIR, 'cars', `car-${car_id}`);
+
       switch (uploadTarget) {
         case 'user':
           if (isAvatar) {
-            photosDir = path.join(process.cwd(), 'public', 'users', `user-${id}`, 'photos', 'avatar');
+            photosDir = path.join(process.cwd(), USER_FILES_DIR, 'avatar');
           } else {
-            photosDir = path.join(process.cwd(), 'public', 'users', `user-${id}`, 'photos');
+            photosDir = path.join(process.cwd(), USER_FILES_DIR, 'photos');
           }
 
-          docsDir = path.join(process.cwd(), 'public', 'users', `user-${id}`, 'docs');
+          docsDir = path.join(process.cwd(), USER_FILES_DIR, 'docs');
 
           break;
         case 'car':
-          photosDir = path.join(process.cwd(), 'public', 'users', `user-${id}`, 'cars', `car-${car_id}`, 'photos');
-          docsDir = path.join(process.cwd(), 'public', 'users', `user-${id}`, 'cars', `car-${car_id}`, 'docs');
+          photosDir = path.join(process.cwd(), CAR_FILES_DIR, 'photos');
+          docsDir = path.join(process.cwd(), CAR_FILES_DIR, 'docs');
 
           break;
         default:
